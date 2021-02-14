@@ -1,0 +1,763 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradient Optimization &#8212; Alice&#39;s Projects</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="FFT - Convolutions and Filtering" href="convolutions.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/wave.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Alice's Projects</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   About Me
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="content.html">
+   Project Notebooks
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="LinReg_PCA.html">
+     Linear Regression and PCA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Linear_Regression.html">
+     Single and Multiple Linear Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="UFOProject.html">
+     UFO Group Project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_cleaning.html">
+     Data Cleaning and Investigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ab_testing.html">
+     A/B Testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fuzzy_matching.html">
+     Fuzzy Matching
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="convolutions.html">
+     FFT - Convolutions and Filtering
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Gradient Optimization
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/gradient_optimization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgradient_optimization.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/gradient_optimization.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-my-own-functions-for-different-gradient-optimization-methods-and-using-them-to-fit-data">
+   Writing my own functions for different gradient optimization methods and using them to fit data.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multidimensional-optimization-of-quadratic-functions">
+   Multidimensional optimization of Quadratic Functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradient-descent-function">
+   Gradient Descent Function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#newton-raphson-method">
+   Newton-Raphson Method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#levenberg-marquardt-method">
+   Levenberg-Marquardt Method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nonlinear-least-squares-optimization">
+   Nonlinear Least Squares Optimization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#auxilliary-functions">
+   Auxilliary functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#modifying-my-function-to-implement-the-levenberg-marquardt-method-for-finding-best-fit-parameters-a-and-k-for-exponential-curve-fitting">
+   Modifying my function to implement the Levenberg-Marquardt method for finding best-fit parameters a and k for exponential curve-fitting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fitting-covid-data-from-italy">
+   Fitting Covid data from Italy
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="gradient-optimization">
+<h1>Gradient Optimization<a class="headerlink" href="#gradient-optimization" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="writing-my-own-functions-for-different-gradient-optimization-methods-and-using-them-to-fit-data">
+<h2>Writing my own functions for different gradient optimization methods and using them to fit data.<a class="headerlink" href="#writing-my-own-functions-for-different-gradient-optimization-methods-and-using-them-to-fit-data" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">KaiC_data.csv</span></code> contains the data of concentration of the circadian protein KaiC as a function of time. The file contains two variables: Time (in hours) and KaiC (in arbitrary units)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#reading in the data</span>
+<span class="n">KaiC</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/KaiC_data.csv&quot;</span><span class="p">)</span>
+<span class="n">Time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">KaiC</span><span class="o">.</span><span class="n">Time</span><span class="p">)</span>
+<span class="n">Amount</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">KaiC</span><span class="o">.</span><span class="n">Amount</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Italy_COVID.csv</span></code> contains the data (case counts) from the first two months of the COVID outbreak for all of Italy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Italy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/Italy_COVID.csv&quot;</span><span class="p">)</span>
+<span class="n">cases</span> <span class="o">=</span> <span class="n">Italy</span><span class="o">.</span><span class="n">cases</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cases</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="multidimensional-optimization-of-quadratic-functions">
+<h2>Multidimensional optimization of Quadratic Functions<a class="headerlink" href="#multidimensional-optimization-of-quadratic-functions" title="Permalink to this headline">¶</a></h2>
+<p>Quadratic function with known linear and quardatic terms:</p>
+<div class="math notranslate nohighlight">
+\[ 
+f( \vec x)  = \frac{1}{2}\vec x^T \mathbf A \vec x - \vec b \vec x  
+\]</div>
+<p>(where f(x) is a scalar, x is a vector, b is a vector, and A is a matrix)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#values to use in the functions</span>
+<span class="n">A1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="p">]])</span>
+<span class="n">b1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#necessary functions</span>
+
+<span class="c1">#quadratic function</span>
+<span class="k">def</span> <span class="nf">quad_func</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">.</span><span class="n">T</span><span class="nd">@A@x</span> <span class="o">-</span> <span class="n">b</span><span class="nd">@x</span>
+
+<span class="c1">#gradient function</span>
+<span class="k">def</span> <span class="nf">gradient_func</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">A</span><span class="o">.</span><span class="n">T</span><span class="nd">@x</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">A</span><span class="nd">@x</span> <span class="o">-</span> <span class="n">b</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quad_func</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">gradient_func</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="n">b1</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0
+[-4.  4.]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="gradient-descent-function">
+<h2>Gradient Descent Function<a class="headerlink" href="#gradient-descent-function" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gradient_descent_func</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">max_step</span><span class="p">,</span><span class="n">tol</span><span class="p">):</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">old_value</span> <span class="o">=</span> <span class="n">quad_func</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">step</span> <span class="o">&lt;</span> <span class="n">max_step</span> <span class="ow">and</span> <span class="n">diff</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="n">new_vec</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">-</span> <span class="n">r</span><span class="o">*</span><span class="n">gradient_func</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span>
+        <span class="n">new_value</span> <span class="o">=</span> <span class="n">quad_func</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">new_vec</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">new_value</span><span class="o">&lt;</span><span class="n">old_value</span><span class="p">:</span>
+            <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">new_vec</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span>
+            <span class="n">step</span> <span class="o">=</span> <span class="n">step</span><span class="o">+</span><span class="mi">1</span>
+            <span class="n">x0</span> <span class="o">=</span> <span class="n">new_vec</span> 
+            <span class="n">old_value</span> <span class="o">=</span> <span class="n">new_value</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">r</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">return</span> <span class="n">x0</span><span class="p">,</span> <span class="n">step</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">gradient_descent_func</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">tol</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="n">b1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 3.99999785, -3.00000012]), 23)
+[ 4. -3.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The given gradient descent function took 23 steps to converge to the given tolerance level.</p>
+</div>
+<div class="section" id="newton-raphson-method">
+<h2>Newton-Raphson Method<a class="headerlink" href="#newton-raphson-method" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">newton_func</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">max_step</span><span class="p">,</span><span class="n">tol</span><span class="p">):</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">old_value</span> <span class="o">=</span> <span class="n">quad_func</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span>
+    <span class="k">while</span> <span class="n">step</span> <span class="o">&lt;</span> <span class="n">max_step</span> <span class="ow">and</span> <span class="n">diff</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="n">new_vec</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">H</span><span class="p">)</span><span class="nd">@gradient_func</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span>
+        <span class="n">new_value</span> <span class="o">=</span> <span class="n">quad_func</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">new_vec</span><span class="p">)</span>
+        <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">new_vec</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span>
+        <span class="n">step</span> <span class="o">=</span> <span class="n">step</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">x0</span> <span class="o">=</span> <span class="n">new_vec</span> 
+        <span class="n">old_value</span> <span class="o">=</span> <span class="n">new_value</span>
+    <span class="k">return</span> <span class="n">x0</span><span class="p">,</span> <span class="n">step</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">newton_func</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">tol</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="n">b1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 4., -3.]), 2)
+[ 4. -3.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the Newton-Raphson method, the function converged much faster taking only two steps.</p>
+</div>
+<div class="section" id="levenberg-marquardt-method">
+<h2>Levenberg-Marquardt Method<a class="headerlink" href="#levenberg-marquardt-method" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lm_func14</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">x0</span><span class="p">,</span><span class="n">max_step</span><span class="p">,</span><span class="n">tol</span><span class="p">):</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">old_value</span> <span class="o">=</span> <span class="n">quad_func</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span>
+    <span class="n">lamda</span> <span class="o">=</span> <span class="mf">100.0</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">while</span> <span class="n">step</span> <span class="o">&lt;</span> <span class="n">max_step</span> <span class="ow">and</span> <span class="n">diff</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="n">new_vec</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">H</span> <span class="o">+</span> <span class="n">lamda</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">H</span><span class="p">)))</span><span class="nd">@gradient_func</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">x0</span><span class="p">)</span>
+        <span class="n">new_value</span> <span class="o">=</span> <span class="n">quad_func</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">new_vec</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">new_value</span> <span class="o">&lt;</span> <span class="n">old_value</span><span class="p">:</span>
+            <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">new_vec</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span>
+            <span class="n">step</span> <span class="o">=</span> <span class="n">step</span><span class="o">+</span><span class="mi">1</span>
+            <span class="n">x0</span> <span class="o">=</span> <span class="n">new_vec</span> 
+            <span class="n">old_value</span> <span class="o">=</span> <span class="n">new_value</span>
+            <span class="n">lamda</span> <span class="o">=</span> <span class="n">lamda</span><span class="o">/</span><span class="n">s</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lamda</span> <span class="o">=</span> <span class="n">lamda</span><span class="o">*</span><span class="n">s</span>
+    <span class="k">return</span> <span class="n">x0</span><span class="p">,</span> <span class="n">step</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">15</span><span class="p">])</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lm_func14</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">tol</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="n">b1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ 4., -3.]), 9)
+[ 4. -3.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the Levenberg-Marquardt method, the function took 9 steps to converge.</p>
+</div>
+<div class="section" id="nonlinear-least-squares-optimization">
+<h2>Nonlinear Least Squares Optimization<a class="headerlink" href="#nonlinear-least-squares-optimization" title="Permalink to this headline">¶</a></h2>
+<p>Using the Levenberg-Marquardt method to perform a nonlinear least squares fit, using the exponential decay function with parameters <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(k\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x; a,k) = ae^{kx} 
+\]</div>
+</div>
+<div class="section" id="auxilliary-functions">
+<h2>Auxilliary functions<a class="headerlink" href="#auxilliary-functions" title="Permalink to this headline">¶</a></h2>
+<ol>
+<li><p>Function to compute the sum of square errors (the objective function)</p>
+<div class="math notranslate nohighlight">
+\[ SSE = \sum_i (ae^{kx_i} - y_i)^2 \]</div>
+</li>
+<li><p>Function to calculate the gradient (G) and Hessian (H) for the nonlinear least squares optimization</p>
+<ul class="simple">
+<li><p>The gradient  component in the direction of parameter a is the sum over all data points of the following term:
+$<span class="math notranslate nohighlight">\( G[0] = \sum_i  (f(x_i; a, k)-y_i) \frac{\partial f(x_i; a, k)}{\partial a}\)</span>$</p></li>
+<li><p>The gradient component in the direction of parameter k is the sum  over all data points of the following term:
+$<span class="math notranslate nohighlight">\( G[1] = \sum_i  (f(x_i; a, k)-y_i) \frac{\partial f(x_i; a, k)}{\partial k}\)</span><span class="math notranslate nohighlight">\( 
+Here \)</span>y_i = f(x_i; a, k)$, and SSE is calculated by the first function.</p></li>
+<li><p>The Hessian matrix is then computed as follows:
+$<span class="math notranslate nohighlight">\(H[0,0] = \sum_i \left(\frac{\partial f (x_i; a, k)}{\partial a} \right)^2 \)</span><span class="math notranslate nohighlight">\(
+ \)</span><span class="math notranslate nohighlight">\(H[1,1] = \sum_i  \left(\frac{\partial f (x_i; a, k)}{\partial k}\right)^2\)</span><span class="math notranslate nohighlight">\(
+ \)</span><span class="math notranslate nohighlight">\(H[0,1] = H[1,0]= \sum_i \frac{\partial f (x_i; a, k)}{\partial a} \frac{\partial f (x_i; a, k)}{\partial k}\)</span>$</p></li>
+</ul>
+</li>
+</ol>
+<p>Test my functions with KaiC data, using parameters a=10 and k=-0.5. I should get:</p>
+<p>SSE = 3397.7197634698623
+G = [[ -72.80278399],[-348.94647508]]
+H = [[1.58196699, 9.20551297],[9.20551297, 199.07470824]]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">se_func</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sse_func</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">se_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">k</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">k</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>
+<span class="n">sse_func</span><span class="p">(</span><span class="n">KaiC</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">KaiC</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">a</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3397.7197634698623
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">grad_hess_func</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">k</span><span class="p">):</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],[</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]])</span>
+    <span class="n">se</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">y</span>
+    <span class="n">pa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">pk</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">G</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">se</span> <span class="o">*</span> <span class="n">pa</span><span class="p">)</span>
+    <span class="n">G</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">se</span> <span class="o">*</span> <span class="n">pk</span><span class="p">)</span>
+    <span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pa</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">H</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pk</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">H</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">pa</span><span class="o">*</span><span class="n">pk</span><span class="p">)</span>
+    <span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">H</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">G</span><span class="p">,</span> <span class="n">H</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">k</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>
+<span class="n">grad_hess_func</span><span class="p">(</span><span class="n">KaiC</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">KaiC</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="n">a</span><span class="p">,</span><span class="n">k</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(array([ -72.80278399, -348.94647508]),
+ array([[  1.58196699,   9.20551297],
+        [  9.20551297, 199.07470824]]))
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="modifying-my-function-to-implement-the-levenberg-marquardt-method-for-finding-best-fit-parameters-a-and-k-for-exponential-curve-fitting">
+<h2>Modifying my function to implement the Levenberg-Marquardt method for finding best-fit parameters a and k for exponential curve-fitting<a class="headerlink" href="#modifying-my-function-to-implement-the-levenberg-marquardt-method-for-finding-best-fit-parameters-a-and-k-for-exponential-curve-fitting" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">lm_func22</span><span class="p">(</span><span class="n">a0</span><span class="p">,</span><span class="n">k0</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">max_step</span><span class="p">,</span><span class="n">tol</span><span class="p">,</span><span class="n">scale</span><span class="p">):</span>
+    <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">diff</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">old_vec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">a0</span><span class="p">,</span> <span class="n">k0</span><span class="p">])</span>
+    <span class="n">old_value</span> <span class="o">=</span> <span class="n">sse_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">a0</span><span class="p">,</span><span class="n">k0</span><span class="p">)</span>
+    <span class="n">lamda</span> <span class="o">=</span> <span class="mf">100.0</span>
+    <span class="k">while</span> <span class="n">step</span> <span class="o">&lt;</span> <span class="n">max_step</span> <span class="ow">and</span> <span class="n">diff</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span>
+        <span class="n">G</span><span class="p">,</span><span class="n">H</span> <span class="o">=</span> <span class="n">grad_hess_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">a0</span><span class="p">,</span><span class="n">k0</span><span class="p">)</span>
+        <span class="n">new_vec</span> <span class="o">=</span> <span class="n">old_vec</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">H</span> <span class="o">+</span> <span class="n">lamda</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">H</span><span class="p">)))</span><span class="nd">@G</span>
+        <span class="n">a0</span><span class="p">,</span> <span class="n">k0</span> <span class="o">=</span> <span class="n">new_vec</span>
+        <span class="n">new_value</span> <span class="o">=</span> <span class="n">sse_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">a0</span><span class="p">,</span><span class="n">k0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">new_value</span> <span class="o">&lt;</span> <span class="n">old_value</span><span class="p">:</span>
+            <span class="n">diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">new_vec</span> <span class="o">-</span> <span class="n">old_vec</span><span class="p">)</span>
+            <span class="n">step</span> <span class="o">=</span> <span class="n">step</span><span class="o">+</span><span class="mi">1</span>
+            <span class="n">old_vec</span> <span class="o">=</span> <span class="n">new_vec</span> 
+            <span class="n">old_value</span> <span class="o">=</span> <span class="n">new_value</span>
+            <span class="n">lamda</span> <span class="o">=</span> <span class="n">lamda</span><span class="o">/</span><span class="n">scale</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">lamda</span> <span class="o">=</span> <span class="n">lamda</span><span class="o">*</span><span class="n">scale</span>
+    <span class="n">a0</span><span class="p">,</span> <span class="n">k0</span> <span class="o">=</span> <span class="n">old_vec</span> 
+    <span class="k">return</span> <span class="n">a0</span><span class="p">,</span> <span class="n">k0</span><span class="p">,</span> <span class="n">step</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a0</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">k0</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span>
+<span class="n">tol</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">Kai_lm</span> <span class="o">=</span> <span class="n">lm_func22</span><span class="p">(</span><span class="n">a0</span><span class="p">,</span><span class="n">k0</span><span class="p">,</span><span class="n">KaiC</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">KaiC</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span><span class="mi">1000</span><span class="p">,</span><span class="n">tol</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">Kai_lm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(59.28974011690078, -0.605985748917563, 13)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amount_kai</span> <span class="o">=</span> <span class="n">se_func</span><span class="p">(</span><span class="n">Time</span><span class="p">,</span> <span class="n">Kai_lm</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">Kai_lm</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">Time</span><span class="p">,</span> <span class="n">Amount</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Time</span><span class="p">,</span> <span class="n">amount_kai</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;LM fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;KaiC amount over Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (hrs)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;KaiC amount&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">SSE_kai</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">amount_kai</span> <span class="o">-</span> <span class="n">Amount</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SSE:&#39;</span><span class="p">,</span> <span class="n">SSE_kai</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/gradient_optimization_26_0.png" src="_images/gradient_optimization_26_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SSE: 7.243426946877536
+</pre></div>
+</div>
+</div>
+</div>
+<p>The SSE is fairly low, and the fit looks good.</p>
+</div>
+<div class="section" id="fitting-covid-data-from-italy">
+<h2>Fitting Covid data from Italy<a class="headerlink" href="#fitting-covid-data-from-italy" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a0</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">k0</span> <span class="o">=</span> <span class="mf">0.05</span> 
+<span class="n">tol</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">cases</span> <span class="o">=</span> <span class="n">cases</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">covid_lm</span> <span class="o">=</span> <span class="n">lm_func22</span><span class="p">(</span><span class="n">a0</span><span class="p">,</span><span class="n">k0</span><span class="p">,</span><span class="n">time</span><span class="p">,</span><span class="n">cases</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="n">tol</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">covid_lm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(251.71073271305258, 0.10639127757098622, 70)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cases_covid</span> <span class="o">=</span> <span class="n">se_func</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">covid_lm</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">covid_lm</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">cases</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">cases_covid</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;LM fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;New Cases over Time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (days)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;New Cases&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">SSE_covid</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">cases_covid</span> <span class="o">-</span> <span class="n">cases</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SSE:&#39;</span><span class="p">,</span> <span class="n">SSE_covid</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/gradient_optimization_30_0.png" src="_images/gradient_optimization_30_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SSE: 699403404.0976192
+</pre></div>
+</div>
+</div>
+</div>
+<p>There is a higher SSE and the fit appears a bit too steep compared to the actual data.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="convolutions.html" title="previous page">FFT - Convolutions and Filtering</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Alice Saparov<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

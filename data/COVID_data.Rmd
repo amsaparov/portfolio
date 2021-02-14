@@ -1,0 +1,27 @@
+---
+title: "COVID data reader"
+author: "Dmitry Kondrashov"
+date: "1/31/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+covid_tb <- read_csv("time_series_covid19_confirmed_global.csv")
+```
+
+
+```{r}
+covid_italy <- covid_tb %>% filter(`Country/Region` == 'Italy')
+italy_tidy <- covid_italy %>% pivot_longer(
+     cols = !c(`Province/State`, `Country/Region`, Long, Lat), 
+     names_to = "date", 
+     values_to = "number")
+italy_short <- italy_tidy %>% select(`Country/Region`, date, number) %>%  filter (mdy(date) %in% seq(ymd('2020-02-01'),ymd('2020-03-29'), by = 'days')) 
+```
+
+```{r}
+italy_short %>% ggplot() + aes(x = mdy(date), y = number) + geom_point()
+```
+

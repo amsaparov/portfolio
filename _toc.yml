@@ -1,0 +1,14 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+#
+- file: markdown
+- file: content
+  sections:
+    - file: LinReg_PCA.ipynb
+    - file: Linear_Regression.ipynb
+    - file: UFOProject.ipynb
+    - file: data_cleaning.ipynb
+    - file: ab_testing.ipynb
+    - file: fuzzy_matching.ipynb
+    - file: convolutions.ipynb
+    - file: gradient_optimization

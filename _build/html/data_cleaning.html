@@ -1,0 +1,1167 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Cleaning and Investigation &#8212; Alice&#39;s Projects</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="A/B Testing" href="ab_testing.html" />
+    <link rel="prev" title="UFO Group Project" href="UFOProject.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/wave.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Alice's Projects</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   About Me
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="content.html">
+   Project Notebooks
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="LinReg_PCA.html">
+     Linear Regression and PCA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Linear_Regression.html">
+     Single and Multiple Linear Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="UFOProject.html">
+     UFO Group Project
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Data Cleaning and Investigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ab_testing.html">
+     A/B Testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fuzzy_matching.html">
+     Fuzzy Matching
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="convolutions.html">
+     FFT - Convolutions and Filtering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gradient_optimization.html">
+     Gradient Optimization
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/data_cleaning.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdata_cleaning.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/data_cleaning.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chicago-divvy-bike-data">
+   Chicago Divvy Bike Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filling-in-missing-station-names-using-station-ids">
+     Filling in missing station names using station ids
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#investigating-the-data">
+   Investigating the Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-was-the-longest-ride">
+     What was the longest ride?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#where-do-people-go-when-they-take-long-trips">
+     Where do people go when they take long trips?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-durations-of-trips-differ-between-men-and-women">
+     How do durations of trips differ between men and women?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-does-age-being-in-college-vs-not-impact-trip-duration">
+     How does age (being in college vs not) impact trip duration?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploring-trip-duration-by-day-of-the-week">
+     Exploring trip duration by day of the week
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#trips-to-and-from-our-main-campus-library">
+     Trips to and from our main campus library
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-day-were-the-most-rides-taken">
+     What day were the most rides taken?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="data-cleaning-and-investigation">
+<h1>Data Cleaning and Investigation<a class="headerlink" href="#data-cleaning-and-investigation" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">datascience</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plots</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="chicago-divvy-bike-data">
+<h2>Chicago Divvy Bike Data<a class="headerlink" href="#chicago-divvy-bike-data" title="Permalink to this headline">¶</a></h2>
+<p>I downloaded Chicago Divvy data for the last quarter before the pandemic (Q4 of 2019) from:
+https://divvy-tripdata.s3.amazonaws.com/index.html</p>
+<p>Map of the system is here:
+https://member.divvybikes.com/map/</p>
+<p>List of stations can be found here:
+https://data.cityofchicago.org/Transportation/Divvy-Bicycle-Stations/bbyy-e7gq/data</p>
+<p>The downloaded dataset has more than 700K rides, and the I am choosing to focus on rides centered around my campus in Hyde Park.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bike</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;Bike.csv&quot;</span><span class="p">)</span>
+<span class="n">bike</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>trip_id</th>
+      <th>start_time</th>
+      <th>end_time</th>
+      <th>bikeid</th>
+      <th>tripduration</th>
+      <th>from_station_id</th>
+      <th>from_station_name</th>
+      <th>to_station_id</th>
+      <th>to_station_name</th>
+      <th>usertype</th>
+      <th>gender</th>
+      <th>birthyear</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>25317046</td>
+      <td>10/7/19 13:39</td>
+      <td>10/7/19 14:05</td>
+      <td>4231</td>
+      <td>1533.0</td>
+      <td>424</td>
+      <td>Museum of Science and Industry</td>
+      <td>355</td>
+      <td>South Shore Dr &amp; 67th St</td>
+      <td>Customer</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>25577704</td>
+      <td>10/27/19 16:44</td>
+      <td>10/27/19 16:49</td>
+      <td>523</td>
+      <td>283.0</td>
+      <td>345</td>
+      <td>Lake Park Ave &amp; 56th St</td>
+      <td>423</td>
+      <td>University Ave &amp; 57th St</td>
+      <td>Subscriber</td>
+      <td>Male</td>
+      <td>1989.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>25823341</td>
+      <td>12/4/19 17:24</td>
+      <td>12/4/19 17:32</td>
+      <td>376</td>
+      <td>486.0</td>
+      <td>423</td>
+      <td>University Ave &amp; 57th St</td>
+      <td>419</td>
+      <td>Lake Park Ave &amp; 53rd St</td>
+      <td>Subscriber</td>
+      <td>Male</td>
+      <td>1993.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>25735449</td>
+      <td>11/19/19 18:32</td>
+      <td>11/19/19 18:35</td>
+      <td>5708</td>
+      <td>174.0</td>
+      <td>248</td>
+      <td>Woodlawn Ave &amp; 55th St</td>
+      <td>322</td>
+      <td>Kimbark Ave &amp; 53rd St</td>
+      <td>Subscriber</td>
+      <td>Male</td>
+      <td>1998.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>25716762</td>
+      <td>11/16/19 21:09</td>
+      <td>11/16/19 21:19</td>
+      <td>1993</td>
+      <td>633.0</td>
+      <td>322</td>
+      <td>Kimbark Ave &amp; 53rd St</td>
+      <td>426</td>
+      <td>Ellis Ave &amp; 60th St</td>
+      <td>Subscriber</td>
+      <td>Male</td>
+      <td>2001.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#function to calculate the number of duplicated rows</span>
+<span class="k">def</span> <span class="nf">num_dupe_func</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">df_nodupe</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_nodupe</span><span class="p">)</span>
+<span class="n">num_dupe_func</span><span class="p">(</span><span class="n">bike</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating df with no duplicates</span>
+<span class="n">bikeND</span> <span class="o">=</span> <span class="n">bike</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#columns with missing values</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;columns with missing values:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">bikeND</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>columns with missing values:
+trip_id                0
+start_time             0
+end_time               0
+bikeid                 0
+tripduration           0
+from_station_id        0
+from_station_name      2
+to_station_id          0
+to_station_name        2
+usertype               0
+gender               206
+birthyear            199
+dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#missing rows</span>
+<span class="n">nullrows</span> <span class="o">=</span> <span class="n">bikeND</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;columns&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;# missing rows:&#39;</span><span class="p">,</span> <span class="n">nullrows</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># missing rows: 210
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#investigating how missing values differ by user type</span>
+<span class="n">null_df</span> <span class="o">=</span> <span class="n">bikeND</span><span class="p">[</span><span class="n">nullrows</span><span class="p">]</span>
+<span class="n">null_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">null_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;usertype&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>trip_id</th>
+      <th>start_time</th>
+      <th>end_time</th>
+      <th>bikeid</th>
+      <th>tripduration</th>
+      <th>from_station_id</th>
+      <th>from_station_name</th>
+      <th>to_station_id</th>
+      <th>to_station_name</th>
+      <th>gender</th>
+      <th>birthyear</th>
+    </tr>
+    <tr>
+      <th>usertype</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Customer</th>
+      <td>199</td>
+      <td>199</td>
+      <td>199</td>
+      <td>199</td>
+      <td>199</td>
+      <td>199</td>
+      <td>199</td>
+      <td>199</td>
+      <td>199</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Subscriber</th>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>11</td>
+      <td>9</td>
+      <td>11</td>
+      <td>9</td>
+      <td>4</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>The table above counts the non null values in each column grouped by user type from a table containing only all the rows with null values. Based on the this, customers are only missing data in their gender and birthyear columns. Subscribers are missing two values ‘from station’ names and two values ‘to station’ names, and seven subscribers are missing their gender as well (all birth years are there).</p>
+<div class="section" id="filling-in-missing-station-names-using-station-ids">
+<h3>Filling in missing station names using station ids<a class="headerlink" href="#filling-in-missing-station-names-using-station-ids" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">id_name</span> <span class="o">=</span> <span class="n">bikeND</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#find index and missing station names</span>
+<span class="n">filled_df</span> <span class="o">=</span> <span class="n">bikeND</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filled_df</span><span class="p">[</span><span class="n">filled_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">filled_df</span><span class="p">[</span><span class="n">filled_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     from_station_id from_station_name  to_station_id      to_station_name
+12               423                 0            418  Ellis Ave &amp; 53rd St
+175              418                 0            328  Ellis Ave &amp; 58th St
+     from_station_id         from_station_name  to_station_id to_station_name
+44               423  University Ave &amp; 57th St            426               0
+276              345   Lake Park Ave &amp; 56th St            423               0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#find station name based on station id</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">id_name</span><span class="p">[</span><span class="n">id_name</span><span class="o">.</span><span class="n">from_station_id</span><span class="o">==</span><span class="mi">423</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">id_name</span><span class="p">[</span><span class="n">id_name</span><span class="o">.</span><span class="n">from_station_id</span><span class="o">==</span><span class="mi">418</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">id_name</span><span class="p">[</span><span class="n">id_name</span><span class="o">.</span><span class="n">from_station_id</span><span class="o">==</span><span class="mi">426</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    from_station_id         from_station_name
+2               423  University Ave &amp; 57th St
+12              423                       NaN
+     from_station_id    from_station_name
+9                418  Ellis Ave &amp; 53rd St
+175              418                  NaN
+    from_station_id    from_station_name
+46              426  Ellis Ave &amp; 60th St
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bikeND</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;from_station_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;University Ave &amp; 57th St&#39;</span>
+<span class="n">bikeND</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">175</span><span class="p">,</span> <span class="s1">&#39;from_station_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Ellis Ave &amp; 53rd St&#39;</span>
+<span class="n">bikeND</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">44</span><span class="p">,</span> <span class="s1">&#39;to_station_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Ellis Ave &amp; 60th St&#39;</span>
+<span class="n">bikeND</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">276</span><span class="p">,</span> <span class="s1">&#39;to_station_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;University Ave &amp; 57th St&#39;</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#check that station names are imputed</span>
+<span class="n">bikeND</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="mi">12</span><span class="p">,</span><span class="mi">175</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">276</span><span class="p">],:]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>trip_id</th>
+      <th>start_time</th>
+      <th>end_time</th>
+      <th>bikeid</th>
+      <th>tripduration</th>
+      <th>from_station_id</th>
+      <th>from_station_name</th>
+      <th>to_station_id</th>
+      <th>to_station_name</th>
+      <th>usertype</th>
+      <th>gender</th>
+      <th>birthyear</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>12</th>
+      <td>25600923</td>
+      <td>10/29/19 17:49</td>
+      <td>10/29/19 17:54</td>
+      <td>2054</td>
+      <td>328.0</td>
+      <td>423</td>
+      <td>University Ave &amp; 57th St</td>
+      <td>418</td>
+      <td>Ellis Ave &amp; 53rd St</td>
+      <td>Subscriber</td>
+      <td>Male</td>
+      <td>1980.0</td>
+    </tr>
+    <tr>
+      <th>175</th>
+      <td>25507288</td>
+      <td>10/21/19 8:38</td>
+      <td>10/21/19 8:42</td>
+      <td>4392</td>
+      <td>288.0</td>
+      <td>418</td>
+      <td>Ellis Ave &amp; 53rd St</td>
+      <td>328</td>
+      <td>Ellis Ave &amp; 58th St</td>
+      <td>Subscriber</td>
+      <td>Female</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>25601662</td>
+      <td>10/29/19 18:23</td>
+      <td>10/29/19 18:27</td>
+      <td>486</td>
+      <td>248.0</td>
+      <td>423</td>
+      <td>University Ave &amp; 57th St</td>
+      <td>426</td>
+      <td>Ellis Ave &amp; 60th St</td>
+      <td>Subscriber</td>
+      <td>Male</td>
+      <td>2000.0</td>
+    </tr>
+    <tr>
+      <th>276</th>
+      <td>25366919</td>
+      <td>10/10/19 8:10</td>
+      <td>10/10/19 8:15</td>
+      <td>875</td>
+      <td>292.0</td>
+      <td>345</td>
+      <td>Lake Park Ave &amp; 56th St</td>
+      <td>423</td>
+      <td>University Ave &amp; 57th St</td>
+      <td>Subscriber</td>
+      <td>Male</td>
+      <td>1986.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="investigating-the-data">
+<h2>Investigating the Data<a class="headerlink" href="#investigating-the-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="what-was-the-longest-ride">
+<h3>What was the longest ride?<a class="headerlink" href="#what-was-the-longest-ride" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bikeND</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;tripduration&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>trip_id</th>
+      <th>start_time</th>
+      <th>end_time</th>
+      <th>bikeid</th>
+      <th>tripduration</th>
+      <th>from_station_id</th>
+      <th>from_station_name</th>
+      <th>to_station_id</th>
+      <th>to_station_name</th>
+      <th>usertype</th>
+      <th>gender</th>
+      <th>birthyear</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>408</th>
+      <td>25575836</td>
+      <td>10/27/19 15:12</td>
+      <td>10/28/19 14:09</td>
+      <td>1187</td>
+      <td>82667.0</td>
+      <td>424</td>
+      <td>Museum of Science and Industry</td>
+      <td>653</td>
+      <td>Cornell Dr &amp; Hayes Dr</td>
+      <td>Customer</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="where-do-people-go-when-they-take-long-trips">
+<h3>Where do people go when they take long trips?<a class="headerlink" href="#where-do-people-go-when-they-take-long-trips" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#top 244 longest trips (top 10%)</span>
+<span class="n">sort_tripdur</span> <span class="o">=</span> <span class="n">bikeND</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;tripduration&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">244</span><span class="p">]</span>
+
+<span class="c1">#where do they go?</span>
+<span class="n">end_where</span> <span class="o">=</span> <span class="n">sort_tripdur</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;to_station_name&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+
+<span class="c1">#select out msi</span>
+<span class="n">msi_df</span> <span class="o">=</span> <span class="n">sort_tripdur</span><span class="p">[</span><span class="n">sort_tripdur</span><span class="o">.</span><span class="n">to_station_id</span><span class="o">==</span><span class="mi">424</span><span class="p">]</span>
+
+<span class="c1">#when do they arrive? what day of the week?</span>
+<span class="n">go_when</span> <span class="o">=</span> <span class="n">msi_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;end_hour&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">week_when</span> <span class="o">=</span> <span class="n">msi_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;weekday&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;most common ending location:&#39;</span><span class="p">,</span> <span class="n">end_where</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;most common hour of arrival:&#39;</span><span class="p">,</span> <span class="n">go_when</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;most common weekday to go:&#39;</span><span class="p">,</span> <span class="n">week_when</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">72</span><span class="n">f2d571538d</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="c1">#when do they arrive? what day of the week?</span>
+<span class="ne">---&gt; </span><span class="mi">11</span> <span class="n">go_when</span> <span class="o">=</span> <span class="n">msi_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;end_hour&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="n">week_when</span> <span class="o">=</span> <span class="n">msi_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;weekday&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> 
+
+<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/pandas/core/frame.py</span> in <span class="ni">groupby</span><span class="nt">(self, by, axis, level, as_index, sort, group_keys, squeeze, observed, dropna)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6519</span>             <span class="n">squeeze</span><span class="o">=</span><span class="n">squeeze</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">6520</span>             <span class="n">observed</span><span class="o">=</span><span class="n">observed</span><span class="p">,</span>
+<span class="ne">-&gt; </span><span class="mi">6521</span>             <span class="n">dropna</span><span class="o">=</span><span class="n">dropna</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">6522</span>         <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">6523</span> 
+
+<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/pandas/core/groupby/groupby.py</span> in <span class="ni">__init__</span><span class="nt">(self, obj, keys, axis, level, grouper, exclusions, selection, as_index, sort, group_keys, squeeze, observed, mutated, dropna)</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span>                 <span class="n">observed</span><span class="o">=</span><span class="n">observed</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">532</span>                 <span class="n">mutated</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mutated</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">533</span>                 <span class="n">dropna</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dropna</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">534</span>             <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">535</span> 
+
+<span class="nn">/opt/anaconda3/lib/python3.7/site-packages/pandas/core/groupby/grouper.py</span> in <span class="ni">get_grouper</span><span class="nt">(obj, key, axis, level, sort, observed, mutated, validate, dropna)</span>
+<span class="g g-Whitespace">    </span><span class="mi">779</span>                 <span class="n">in_axis</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">level</span><span class="p">,</span> <span class="n">gpr</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">gpr</span><span class="p">,</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">780</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">781</span>                 <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">gpr</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">782</span>         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">gpr</span><span class="p">,</span> <span class="n">Grouper</span><span class="p">)</span> <span class="ow">and</span> <span class="n">gpr</span><span class="o">.</span><span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">783</span>             <span class="c1"># Add key to exclusions</span>
+
+<span class="ne">KeyError</span>: &#39;end_hour&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>I chose to look into where people tended to go when they took longer trips. I sorted the dataframe by trip duration and selected the top 244 longest trips which would be the top 10%. From there, I looked at where people went by grouping the dataframe by the ‘to_station_name’ column. It turns out that the top 10% longest trips were to the Museum of Science and Industry. Next, I wanted to investigate when people got there and on what day of the week. Thus, I selected out the MSI as the final destination and I looked into when the most common time that people got there was and on what day of the week they went. Ultimately, it turns out the top 10% of longest rides are to the MSI on Sunday, arriving at 1 PM! Sounds like a good way to spend a Sunday :)</p>
+</div>
+<div class="section" id="how-do-durations-of-trips-differ-between-men-and-women">
+<h3>How do durations of trips differ between men and women?<a class="headerlink" href="#how-do-durations-of-trips-differ-between-men-and-women" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">females</span> <span class="o">=</span> <span class="n">bikeND</span><span class="p">[</span><span class="n">bikeND</span><span class="o">.</span><span class="n">gender</span><span class="o">==</span><span class="s1">&#39;Female&#39;</span><span class="p">]</span>
+<span class="n">males</span> <span class="o">=</span> <span class="n">bikeND</span><span class="p">[</span><span class="n">bikeND</span><span class="o">.</span><span class="n">gender</span><span class="o">==</span><span class="s1">&#39;Male&#39;</span><span class="p">]</span>
+
+<span class="n">bikeND</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;tripduration&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span> 
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Trip Duration Grouped by Gender&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Trip Duration&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Gender&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">females</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;tripduration&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Trip Duration - Females&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Trip Duration&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1500</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">males</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;tripduration&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">1500</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Trip Duration - Males&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Trip Duration&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1500</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/data_cleaning_23_0.png" src="_images/data_cleaning_23_0.png" />
+<img alt="_images/data_cleaning_23_1.png" src="_images/data_cleaning_23_1.png" />
+<img alt="_images/data_cleaning_23_2.png" src="_images/data_cleaning_23_2.png" />
+</div>
+</div>
+<p>The boxplot shows us that men have a smaller IQR, and the median trip duration appears slightly shorter for men than women. Men also appear to have more outliers beyond the max. Based on the histograms, both men and women have similar distributions in their trip durations, but it is harder to discern differences between the genders here.</p>
+</div>
+<div class="section" id="how-does-age-being-in-college-vs-not-impact-trip-duration">
+<h3>How does age (being in college vs not) impact trip duration?<a class="headerlink" href="#how-does-age-being-in-college-vs-not-impact-trip-duration" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">no_nas</span> <span class="o">=</span> <span class="n">bikeND</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">college</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">no_nas</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">college</span><span class="p">[</span><span class="n">no_nas</span><span class="o">.</span><span class="n">birthyear</span><span class="o">&lt;</span><span class="mi">1997</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span> <span class="c1">#not college</span>
+<span class="n">college</span><span class="p">[</span><span class="n">no_nas</span><span class="o">.</span><span class="n">birthyear</span><span class="o">&gt;</span><span class="mi">2001</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span> <span class="c1">#not college</span>
+<span class="n">no_nas</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;college&#39;</span><span class="p">,</span> <span class="n">college</span><span class="p">)</span>
+<span class="n">no_nas</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="n">students</span> <span class="o">=</span> <span class="n">no_nas</span><span class="p">[</span><span class="n">no_nas</span><span class="o">.</span><span class="n">college</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">notstud</span> <span class="o">=</span> <span class="n">no_nas</span><span class="p">[</span><span class="n">no_nas</span><span class="o">.</span><span class="n">college</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">students</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;tripduration&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Trip Duration - College&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Trip Duration&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1500</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">notstud</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;tripduration&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Trip Duration - Not in College&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Trip Duration&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Frequency&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1500</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">no_nas</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;college&#39;</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;tripduration&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span> 
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Trip Duration Grouped by Age&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Trip Duration&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Not in College (0), College (1)&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2000</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/data_cleaning_26_0.png" src="_images/data_cleaning_26_0.png" />
+<img alt="_images/data_cleaning_26_1.png" src="_images/data_cleaning_26_1.png" />
+<img alt="_images/data_cleaning_26_2.png" src="_images/data_cleaning_26_2.png" />
+</div>
+</div>
+<p>The histograms show similar distributions (both right skewed), however, college students generally take shorter rides as that distribution is very strongly right skewed. The boxplot supports what is seen in the histograms. The college student trip duration median is less than that of individuals not in college, and their IQR is also much smaller. The college max duration is also much lower than the non college max trip duration. Hence, college students generally take shorter rides.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Calculating Age v Trip Duration</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">2021</span><span class="o">-</span><span class="n">no_nas</span><span class="o">.</span><span class="n">birthyear</span>
+<span class="n">no_nas</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">no_nas</span><span class="o">.</span><span class="n">age</span><span class="p">,</span> <span class="n">no_nas</span><span class="o">.</span><span class="n">tripduration</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">125</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Age&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Trip Duration (min)&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Trip Duration v Age&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/data_cleaning_29_0.png" src="_images/data_cleaning_29_0.png" />
+</div>
+</div>
+<p>There does not appear to be much of trend regarding trip duration and age, although most of the points are between ages 20-40. There also appears to be a substational amount of points between 40-60, but not as many. The trip duration is generally less than 20 minutes, and younger riders (20-40) take more longer trips than individuals over 40.</p>
+</div>
+<div class="section" id="exploring-trip-duration-by-day-of-the-week">
+<h3>Exploring trip duration by day of the week<a class="headerlink" href="#exploring-trip-duration-by-day-of-the-week" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dow</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">bikeND</span><span class="p">[</span><span class="s1">&#39;start_time&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span>
+<span class="n">bikeND</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;weekday&#39;</span><span class="p">,</span> <span class="n">dow</span><span class="p">)</span>
+<span class="n">downum</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DatetimeIndex</span><span class="p">(</span><span class="n">bikeND</span><span class="p">[</span><span class="s1">&#39;start_time&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dayofweek</span>
+<span class="n">bikeND</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;weekday_num&#39;</span><span class="p">,</span> <span class="n">downum</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dow_mean</span> <span class="o">=</span> <span class="n">bikeND</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;weekday_num&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">dow_mean</span><span class="p">[</span><span class="s1">&#39;Week Day&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;Tu&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;Th&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;Sa&#39;</span><span class="p">,</span> <span class="s1">&#39;Su&#39;</span><span class="p">]</span>
+<span class="n">dow_mean</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Week Day&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;tripduration&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Mean Trip Duration&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mean Trip Duration by Day of the Week&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/data_cleaning_33_0.png" src="_images/data_cleaning_33_0.png" />
+</div>
+</div>
+<p>The plot above shows the average trip duration by the day of the week. On average, it appears the longest trips are taken on Saturday and the shortest trips are taken on Wednesday. In general, the weekend (Fri, Sat, Sun) has the longest average trips which is to be expected since people have more time to go out and do things.</p>
+</div>
+<div class="section" id="trips-to-and-from-our-main-campus-library">
+<h3>Trips to and from our main campus library<a class="headerlink" href="#trips-to-and-from-our-main-campus-library" title="Permalink to this headline">¶</a></h3>
+<p>Station 423 is in front of the Regenstein Library. I want to know what the most common hour of the day is (10am, 11pm etc) to start and end a trip there.</p>
+<p>All the trips that start between 10:00am and 10:59am are considered in the 10am group.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">round_start</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">bikeND</span><span class="p">[</span><span class="s1">&#39;start_time&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span>
+<span class="n">round_shr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">round_start</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">time</span>
+<span class="n">bikeND</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="s1">&#39;start_hour&#39;</span><span class="p">,</span> <span class="n">round_shr</span><span class="p">)</span>
+<span class="n">round_end</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">bikeND</span><span class="p">[</span><span class="s1">&#39;end_time&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span>
+<span class="n">round_ehr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">round_end</span><span class="p">)</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">time</span>
+<span class="n">bikeND</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="s1">&#39;end_hour&#39;</span><span class="p">,</span> <span class="n">round_ehr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg_df</span> <span class="o">=</span> <span class="n">bikeND</span><span class="p">[</span><span class="n">bikeND</span><span class="o">.</span><span class="n">from_station_id</span><span class="o">==</span><span class="mi">423</span><span class="p">]</span>
+<span class="n">start_reg</span> <span class="o">=</span> <span class="n">reg_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;start_hour&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="n">end_reg</span> <span class="o">=</span> <span class="n">reg_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;end_hour&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Most common start time:&#39;</span><span class="p">,</span> <span class="n">start_reg</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Most common end time:&#39;</span><span class="p">,</span> <span class="n">end_reg</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Most common start time: 17:00:00
+Most common end time: 17:00:00
+</pre></div>
+</div>
+</div>
+</div>
+<p>The most common start and end time regarding the Reg is 5 pm (17:00)</p>
+</div>
+<div class="section" id="what-day-were-the-most-rides-taken">
+<h3>What day were the most rides taken?<a class="headerlink" href="#what-day-were-the-most-rides-taken" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start_date</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">bikeND</span><span class="p">[</span><span class="s1">&#39;start_time&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">date</span>
+<span class="n">bikeND</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="s1">&#39;start_date&#39;</span><span class="p">,</span> <span class="n">start_date</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pop_start</span> <span class="o">=</span> <span class="n">bikeND</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;start_date&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Most common start date:&#39;</span><span class="p">,</span> <span class="n">pop_start</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Most common start date: 2019-10-03
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="UFOProject.html" title="previous page">UFO Group Project</a>
+    <a class='right-next' id="next-link" href="ab_testing.html" title="next page">A/B Testing</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Alice Saparov<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
