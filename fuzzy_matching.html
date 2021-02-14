@@ -1,0 +1,520 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fuzzy Matching &#8212; Alice&#39;s Projects</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FFT - Convolutions and Filtering" href="convolutions.html" />
+    <link rel="prev" title="A/B Testing" href="ab_testing.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/wave.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Alice's Projects</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   About Me
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="content.html">
+   Project Notebooks
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="LinReg_PCA.html">
+     Linear Regression and PCA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Linear_Regression.html">
+     Single and Multiple Linear Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="UFOProject.html">
+     UFO Group Project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_cleaning.html">
+     Data Cleaning and Investigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ab_testing.html">
+     A/B Testing
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Fuzzy Matching
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="convolutions.html">
+     FFT - Convolutions and Filtering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gradient_optimization.html">
+     Gradient Optimization
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/fuzzy_matching.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ffuzzy_matching.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/fuzzy_matching.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructing-a-naive-plagirism-detector">
+   Constructing a naive plagirism detector
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#findings">
+     Findings
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#does-the-length-of-text-matter">
+     Does the length of text matter?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="fuzzy-matching">
+<h1>Fuzzy Matching<a class="headerlink" href="#fuzzy-matching" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">datascience</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plots</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="constructing-a-naive-plagirism-detector">
+<h2>Constructing a naive plagirism detector<a class="headerlink" href="#constructing-a-naive-plagirism-detector" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Break a string into qgrams (q-character tokens)</span>
+<span class="c1">#Pad the string with spaces on the front and end</span>
+<span class="k">def</span> <span class="nf">qgram</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">q</span><span class="p">):</span>
+    <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nb">str</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span>
+    <span class="k">return</span><span class="p">([</span><span class="nb">str</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">q</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">q</span><span class="o">-</span><span class="mi">1</span><span class="p">))])</span>
+
+<span class="c1">#Compute the jaccard similarity of two strings using trigrams</span>
+<span class="k">def</span> <span class="nf">jaccard_simq</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span> 
+    <span class="n">set1</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">qgram</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span><span class="n">q</span><span class="p">))</span> 
+    <span class="n">set2</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">qgram</span><span class="p">(</span><span class="n">str2</span><span class="p">,</span><span class="n">q</span><span class="p">))</span>
+    <span class="n">common_tokens</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
+    <span class="n">all_tokens</span> <span class="o">=</span> <span class="n">set1</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">set2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">verbose</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;set1 =&#39;</span><span class="p">,</span><span class="n">set1</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;set2 =&#39;</span><span class="p">,</span><span class="n">set2</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Intersection =&#39;</span><span class="p">,</span><span class="n">common_tokens</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Union =&#39;</span><span class="p">,</span><span class="n">all_tokens</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Common Tokens =&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">common_tokens</span><span class="p">),</span>
+              <span class="s1">&#39;Total Tokens =&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">all_tokens</span><span class="p">))</span>
+    <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">common_tokens</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_tokens</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#example of function</span>
+<span class="n">jaccard_simq</span><span class="p">(</span><span class="s1">&#39;the quick brown fox&#39;</span><span class="p">,</span><span class="s1">&#39;fox quick brown the&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>set1 = {&#39;ox&#39;, &#39; f&#39;, &#39; q&#39;, &#39;ic&#39;, &#39;wn&#39;, &#39;x &#39;, &#39;k &#39;, &#39;ck&#39;, &#39;ui&#39;, &#39; b&#39;, &#39;e &#39;, &#39;fo&#39;, &#39;qu&#39;, &#39;br&#39;, &#39;th&#39;, &#39; t&#39;, &#39;ow&#39;, &#39;he&#39;, &#39;n &#39;, &#39;ro&#39;}
+set2 = {&#39;ox&#39;, &#39; f&#39;, &#39; q&#39;, &#39;ic&#39;, &#39;wn&#39;, &#39;x &#39;, &#39;k &#39;, &#39;ck&#39;, &#39;ui&#39;, &#39; b&#39;, &#39;e &#39;, &#39;fo&#39;, &#39;qu&#39;, &#39;br&#39;, &#39;th&#39;, &#39; t&#39;, &#39;ow&#39;, &#39;he&#39;, &#39;n &#39;, &#39;ro&#39;}
+Intersection = {&#39;ox&#39;, &#39; f&#39;, &#39; q&#39;, &#39;ic&#39;, &#39;wn&#39;, &#39;x &#39;, &#39;k &#39;, &#39;ro&#39;, &#39;ck&#39;, &#39;ui&#39;, &#39;e &#39;, &#39;fo&#39;, &#39;qu&#39;, &#39;br&#39;, &#39; t&#39;, &#39;th&#39;, &#39;ow&#39;, &#39;he&#39;, &#39;n &#39;, &#39; b&#39;}
+Union = {&#39;ox&#39;, &#39; f&#39;, &#39; q&#39;, &#39;ic&#39;, &#39;wn&#39;, &#39;x &#39;, &#39;k &#39;, &#39;ck&#39;, &#39;ui&#39;, &#39; b&#39;, &#39;e &#39;, &#39;fo&#39;, &#39;qu&#39;, &#39;br&#39;, &#39;th&#39;, &#39; t&#39;, &#39;ow&#39;, &#39;he&#39;, &#39;n &#39;, &#39;ro&#39;}
+Common Tokens = 20 Total Tokens = 20
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jaccard_simq</span><span class="p">(</span><span class="s1">&#39;the quick brown fox&#39;</span><span class="p">,</span><span class="s1">&#39;fox quick brown the&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#using wikipedia text as original reference</span>
+<span class="n">original</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;original.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#five different student&#39;s responses</span>
+<span class="n">studentA</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;studentA.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">studentB</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;studentB.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">studentC</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;studentC.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">studentD</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;studentD.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">studentE</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;studentE.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculating the Jaccard distances between each of the five student responses and the original Wikipedia reference for all q between 2 and 20</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">jac_tbl</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">,</span> <span class="p">[],</span>
+                              <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="p">[],</span>
+                              <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="p">[],</span>
+                              <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="p">[],</span>
+                              <span class="s1">&#39;D&#39;</span><span class="p">,[],</span>
+                              <span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="p">[])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jaccard_simq</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">studentA</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+    <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jaccard_simq</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">studentB</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+    <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jaccard_simq</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">studentC</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+    <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jaccard_simq</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">studentD</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+    <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jaccard_simq</span><span class="p">(</span><span class="n">original</span><span class="p">,</span> <span class="n">studentE</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+    <span class="n">jac_tbl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+<span class="n">jac_tbl</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>q</th> <th>A</th> <th>B</th> <th>C</th> <th>D</th> <th>E</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2   </td> <td>0.713959</td> <td>0.436647 </td> <td>0.449561 </td> <td>0.413242</td> <td>0.454148</td>
+        </tr>
+        <tr>
+            <td>3   </td> <td>0.528192</td> <td>0.261528 </td> <td>0.232156 </td> <td>0.244681</td> <td>0.2847  </td>
+        </tr>
+        <tr>
+            <td>4   </td> <td>0.457965</td> <td>0.162698 </td> <td>0.128345 </td> <td>0.17714 </td> <td>0.200939</td>
+        </tr>
+        <tr>
+            <td>5   </td> <td>0.42492 </td> <td>0.108565 </td> <td>0.0793766</td> <td>0.150758</td> <td>0.166093</td>
+        </tr>
+        <tr>
+            <td>6   </td> <td>0.402108</td> <td>0.0777298</td> <td>0.0480556</td> <td>0.131777</td> <td>0.147793</td>
+        </tr>
+    </tbody>
+</table>
+<p>... (13 rows omitted)</p></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plot the jaccard distances for each student </span>
+<span class="n">jac_tbl</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;q&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Jaccard Distances&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Jaccard Distance&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/fuzzy_matching_10_0.png" src="_images/fuzzy_matching_10_0.png" />
+</div>
+</div>
+<div class="section" id="findings">
+<h3>Findings<a class="headerlink" href="#findings" title="Permalink to this headline">¶</a></h3>
+<p>A may have some plagarism. The rest start at a high similarity sure to short tokens, but the jaccard distance quickly decreases to below 0.11 for students B,C,D, and E as the tokens increase in length (plagirism is unlikely). However, student A’s jaccard distance starts much higher than the rest, and even though it decreases as token length increases, it does not go lower than 0.3. Thus, even at the sentence length (20 tokens), there is still high similarity.</p>
+</div>
+<div class="section" id="does-the-length-of-text-matter">
+<h3>Does the length of text matter?<a class="headerlink" href="#does-the-length-of-text-matter" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">original</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">studentA</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">studentB</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">studentC</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">studentD</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">studentE</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3098, 1243, 1368, 1076, 493, 610]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Yes, the length of the text matters. A shorter paper will have a shorter jaccard distance. If the text and original are the same then the intersection is equal to the total tokens of the text (same as original). The union is the total tokens, and the jaccard distance is ultimately 1. If you take a shorter portion of the text and compare it to the same original, the maximum intersection can only be as long as the text (the inersecion length decreases). However, the intersection still carries the original text and therefore stays large in comparison. Thus, the jaccard distance decreases with a shorter text (even if it is fully plagarized).</p>
+<p>This is important for our five student scenario because the length of student A, B, and C’s papers are substantially longer than students D and E (about 2x as long). Therefore, if a shorter text has a higher jaccard score (compared to a longer text) the text is more likely to have been plagarized. Ultimately, text length should be taken into account when using jaccard distances to evaluate plagarism.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="ab_testing.html" title="previous page">A/B Testing</a>
+    <a class='right-next' id="next-link" href="convolutions.html" title="next page">FFT - Convolutions and Filtering</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Alice Saparov<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,70 @@
+Traceback (most recent call last):
+  File "/opt/anaconda3/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/opt/anaconda3/lib/python3.7/site-packages/nbclient/client.py", line 1087, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/anaconda3/lib/python3.7/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/anaconda3/lib/python3.7/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/anaconda3/lib/python3.7/asyncio/base_events.py", line 583, in run_until_complete
+    return future.result()
+  File "/opt/anaconda3/lib/python3.7/site-packages/nbclient/client.py", line 541, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/opt/anaconda3/lib/python3.7/site-packages/nbclient/client.py", line 832, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/opt/anaconda3/lib/python3.7/site-packages/nbclient/client.py", line 740, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+#top 244 longest trips (top 10%)
+sort_tripdur = bikeND.sort_values(by='tripduration', ascending = False).iloc[0:244]
+
+#where do they go?
+end_where = sort_tripdur.groupby(by='to_station_name').count().idxmax()
+
+#select out msi
+msi_df = sort_tripdur[sort_tripdur.to_station_id==424]
+
+#when do they arrive? what day of the week?
+go_when = msi_df.groupby(by='end_hour').count().idxmax()
+week_when = msi_df.groupby(by='weekday').count().idxmax()
+
+print('most common ending location:', end_where[0])
+print('most common hour of arrival:', go_when[0])
+print('most common weekday to go:', week_when[0])
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+[0;32m<ipython-input-14-72f2d571538d>[0m in [0;36m<module>[0;34m[0m
+[1;32m      9[0m [0;34m[0m[0m
+[1;32m     10[0m [0;31m#when do they arrive? what day of the week?[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 11[0;31m [0mgo_when[0m [0;34m=[0m [0mmsi_df[0m[0;34m.[0m[0mgroupby[0m[0;34m([0m[0mby[0m[0;34m=[0m[0;34m'end_hour'[0m[0;34m)[0m[0;34m.[0m[0mcount[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0midxmax[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     12[0m [0mweek_when[0m [0;34m=[0m [0mmsi_df[0m[0;34m.[0m[0mgroupby[0m[0;34m([0m[0mby[0m[0;34m=[0m[0;34m'weekday'[0m[0;34m)[0m[0;34m.[0m[0mcount[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0midxmax[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     13[0m [0;34m[0m[0m
+
+[0;32m/opt/anaconda3/lib/python3.7/site-packages/pandas/core/frame.py[0m in [0;36mgroupby[0;34m(self, by, axis, level, as_index, sort, group_keys, squeeze, observed, dropna)[0m
+[1;32m   6519[0m             [0msqueeze[0m[0;34m=[0m[0msqueeze[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   6520[0m             [0mobserved[0m[0;34m=[0m[0mobserved[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 6521[0;31m             [0mdropna[0m[0;34m=[0m[0mdropna[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   6522[0m         )
+[1;32m   6523[0m [0;34m[0m[0m
+
+[0;32m/opt/anaconda3/lib/python3.7/site-packages/pandas/core/groupby/groupby.py[0m in [0;36m__init__[0;34m(self, obj, keys, axis, level, grouper, exclusions, selection, as_index, sort, group_keys, squeeze, observed, mutated, dropna)[0m
+[1;32m    531[0m                 [0mobserved[0m[0;34m=[0m[0mobserved[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    532[0m                 [0mmutated[0m[0;34m=[0m[0mself[0m[0;34m.[0m[0mmutated[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 533[0;31m                 [0mdropna[0m[0;34m=[0m[0mself[0m[0;34m.[0m[0mdropna[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    534[0m             )
+[1;32m    535[0m [0;34m[0m[0m
+
+[0;32m/opt/anaconda3/lib/python3.7/site-packages/pandas/core/groupby/grouper.py[0m in [0;36mget_grouper[0;34m(obj, key, axis, level, sort, observed, mutated, validate, dropna)[0m
+[1;32m    779[0m                 [0min_axis[0m[0;34m,[0m [0mname[0m[0;34m,[0m [0mlevel[0m[0;34m,[0m [0mgpr[0m [0;34m=[0m [0;32mFalse[0m[0;34m,[0m [0;32mNone[0m[0;34m,[0m [0mgpr[0m[0;34m,[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    780[0m             [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 781[0;31m                 [0;32mraise[0m [0mKeyError[0m[0;34m([0m[0mgpr[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    782[0m         [0;32melif[0m [0misinstance[0m[0;34m([0m[0mgpr[0m[0;34m,[0m [0mGrouper[0m[0;34m)[0m [0;32mand[0m [0mgpr[0m[0;34m.[0m[0mkey[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    783[0m             [0;31m# Add key to exclusions[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mKeyError[0m: 'end_hour'
+KeyError: 'end_hour'
+

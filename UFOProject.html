@@ -1,0 +1,1186 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UFO Group Project &#8212; Alice&#39;s Projects</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data Cleaning and Investigation" href="data_cleaning.html" />
+    <link rel="prev" title="Single and Multiple Linear Regression" href="Linear_Regression.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/wave.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Alice's Projects</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   About Me
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="content.html">
+   Project Notebooks
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="LinReg_PCA.html">
+     Linear Regression and PCA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Linear_Regression.html">
+     Single and Multiple Linear Regression
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     UFO Group Project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_cleaning.html">
+     Data Cleaning and Investigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ab_testing.html">
+     A/B Testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fuzzy_matching.html">
+     Fuzzy Matching
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="convolutions.html">
+     FFT - Convolutions and Filtering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gradient_optimization.html">
+     Gradient Optimization
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/UFOProject.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUFOProject.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/UFOProject.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-analysis">
+   Time Analysis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-analysis-month">
+   Time Analysis - Month
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-analysis-hour">
+   Time Analysis - Hour
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-analysis-year">
+   Time Analysis - Year
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sighting-characteristics">
+   Sighting Characteristics
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#spatial-patterns">
+   Spatial Patterns
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ufo-group-project">
+<h1>UFO Group Project<a class="headerlink" href="#ufo-group-project" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">datascience</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plots</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">UFO</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;scrubbed.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="time-analysis">
+<h2>Time Analysis<a class="headerlink" href="#time-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Step 1 - Split the datetime column into the hour of day, month, and year as a list</p>
+<p>Step 2 - Convert the strings into numbers</p>
+<p>Step 3 - Convert the list into columns within a new table</p>
+<p>Step 4 - Create histograms</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here I split the datetime column into the hour, month, and year</span>
+<span class="n">UFOtimes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">UFO</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;datetime&#39;</span><span class="p">))</span>
+<span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">UFOtimes</span><span class="p">]</span>
+<span class="n">hour</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">time</span><span class="p">]</span>
+<span class="n">date</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">UFOtimes</span><span class="p">]</span>
+<span class="n">month</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">date</span><span class="p">]</span>
+<span class="n">year</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">date</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timestable</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s1">&#39;hour&#39;</span><span class="p">,</span> <span class="n">hour</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="n">month</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="n">year</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Here I convert all of the strings into integers</span>
+<span class="n">Year</span> <span class="o">=</span> <span class="n">timestable</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="n">Hour</span> <span class="o">=</span> <span class="n">timestable</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;hour&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="n">Month</span> <span class="o">=</span> <span class="n">timestable</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>
+<span class="n">timestable</span><span class="o">.</span><span class="n">append_column</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">Year</span><span class="p">)</span>
+<span class="n">timestable</span><span class="o">.</span><span class="n">append_column</span><span class="p">(</span><span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="n">Month</span><span class="p">)</span>
+<span class="n">timestable</span><span class="o">.</span><span class="n">append_column</span><span class="p">(</span><span class="s1">&#39;Hour&#39;</span><span class="p">,</span> <span class="n">Hour</span><span class="p">)</span>
+<span class="n">timestable</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;hour&#39;</span><span class="p">,</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="s1">&#39;year&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Year</th> <th>Month</th> <th>Hour</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1949</td> <td>10   </td> <td>20  </td>
+        </tr>
+        <tr>
+            <td>1949</td> <td>10   </td> <td>21  </td>
+        </tr>
+        <tr>
+            <td>1955</td> <td>10   </td> <td>17  </td>
+        </tr>
+        <tr>
+            <td>1956</td> <td>10   </td> <td>21  </td>
+        </tr>
+        <tr>
+            <td>1960</td> <td>10   </td> <td>20  </td>
+        </tr>
+        <tr>
+            <td>1961</td> <td>10   </td> <td>19  </td>
+        </tr>
+        <tr>
+            <td>1965</td> <td>10   </td> <td>21  </td>
+        </tr>
+        <tr>
+            <td>1965</td> <td>10   </td> <td>23  </td>
+        </tr>
+        <tr>
+            <td>1966</td> <td>10   </td> <td>20  </td>
+        </tr>
+        <tr>
+            <td>1966</td> <td>10   </td> <td>21  </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (80322 rows omitted)</p></div></div>
+</div>
+</div>
+<div class="section" id="time-analysis-month">
+<h2>Time Analysis - Month<a class="headerlink" href="#time-analysis-month" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timestable</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/UFOProject_8_0.png" src="_images/UFOProject_8_0.png" />
+</div>
+</div>
+<p>Insights: Most sightings occur in July (12%). The least sightings occur in February (6%).</p>
+</div>
+<div class="section" id="time-analysis-hour">
+<h2>Time Analysis - Hour<a class="headerlink" href="#time-analysis-hour" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timestable</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s1">&#39;Hour&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/UFOProject_11_0.png" src="_images/UFOProject_11_0.png" />
+</div>
+</div>
+<p>Insights: Most sightings occur in the evening. Specifically after 20:00, also known as 8PM.</p>
+</div>
+<div class="section" id="time-analysis-year">
+<h2>Time Analysis - Year<a class="headerlink" href="#time-analysis-year" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timestable</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/UFOProject_14_0.png" src="_images/UFOProject_14_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timestable</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1945</span><span class="p">,</span><span class="mi">2019</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/UFOProject_15_0.png" src="_images/UFOProject_15_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">timestable</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">descending</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Year</th> <th>count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2012</td> <td>7357 </td>
+        </tr>
+        <tr>
+            <td>2013</td> <td>7037 </td>
+        </tr>
+        <tr>
+            <td>2011</td> <td>5107 </td>
+        </tr>
+        <tr>
+            <td>2008</td> <td>4820 </td>
+        </tr>
+        <tr>
+            <td>2009</td> <td>4541 </td>
+        </tr>
+        <tr>
+            <td>2010</td> <td>4283 </td>
+        </tr>
+        <tr>
+            <td>2007</td> <td>4269 </td>
+        </tr>
+        <tr>
+            <td>2004</td> <td>4257 </td>
+        </tr>
+        <tr>
+            <td>2005</td> <td>4083 </td>
+        </tr>
+        <tr>
+            <td>2003</td> <td>3962 </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (77 rows omitted)</p></div></div>
+</div>
+<p>Insights: The most sightings happened in 2012. Coincidentally lining up with the end of the Mayan calendar?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Alice</span>
+
+<span class="n">shape_time</span> <span class="o">=</span> <span class="n">UFO</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">append_column</span><span class="p">(</span><span class="s1">&#39;Hour&#39;</span><span class="p">,</span> <span class="n">Hour</span><span class="p">)</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">,</span> <span class="s1">&#39;Hour&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Time of day and shape together</span>
+<span class="n">topshapes</span> <span class="o">=</span> <span class="n">shape_time</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;Hour&#39;</span><span class="p">,</span><span class="s1">&#39;light&#39;</span><span class="p">,</span> <span class="s1">&#39;triangle&#39;</span><span class="p">,</span> <span class="s1">&#39;circle&#39;</span><span class="p">,</span> <span class="s1">&#39;fireball&#39;</span><span class="p">,</span> <span class="s1">&#39;sphere&#39;</span><span class="p">)</span>
+<span class="n">topshapes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Hour&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;When the top 5 shapes were seen&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Sightings&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/UFOProject_19_0.png" src="_images/UFOProject_19_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalized</span>
+<span class="n">light</span> <span class="o">=</span> <span class="n">topshapes</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;light&#39;</span><span class="p">)</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">topshapes</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;light&#39;</span><span class="p">))</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">triangle</span> <span class="o">=</span> <span class="n">topshapes</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;triangle&#39;</span><span class="p">)</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">topshapes</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;triangle&#39;</span><span class="p">))</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">circle</span> <span class="o">=</span> <span class="n">topshapes</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;circle&#39;</span><span class="p">)</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">topshapes</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;circle&#39;</span><span class="p">))</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">fireball</span> <span class="o">=</span> <span class="n">topshapes</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;fireball&#39;</span><span class="p">)</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">topshapes</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;fireball&#39;</span><span class="p">))</span><span class="o">*</span><span class="mi">100</span>
+<span class="n">sphere</span> <span class="o">=</span> <span class="n">topshapes</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;sphere&#39;</span><span class="p">)</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">topshapes</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;sphere&#39;</span><span class="p">))</span><span class="o">*</span><span class="mi">100</span>
+
+<span class="n">scaled_topshapes</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s1">&#39;hour&#39;</span><span class="p">,</span> <span class="n">topshapes</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Hour&#39;</span><span class="p">),</span>
+                                        <span class="s1">&#39;light&#39;</span><span class="p">,</span> <span class="n">light</span><span class="p">,</span>
+                                        <span class="s1">&#39;triangle&#39;</span><span class="p">,</span> <span class="n">triangle</span><span class="p">,</span>
+                                        <span class="s1">&#39;circle&#39;</span><span class="p">,</span> <span class="n">circle</span><span class="p">,</span>
+                                        <span class="s1">&#39;fireball&#39;</span><span class="p">,</span> <span class="n">fireball</span><span class="p">,</span>
+                                        <span class="s1">&#39;sphere&#39;</span><span class="p">,</span> <span class="n">sphere</span><span class="p">)</span>
+<span class="n">scaled_topshapes</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;hour&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;When the top 5 shapes were seen&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">% o</span><span class="s1">f Sightings&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/UFOProject_20_0.png" src="_images/UFOProject_20_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Looking at the latest 10 years</span>
+<span class="n">tenyrs</span> <span class="o">=</span> <span class="n">timestable</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">descending</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">2003</span><span class="p">,</span><span class="mi">2014</span><span class="p">))</span>
+<span class="n">avg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">tenyrs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">))</span>
+<span class="n">std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">tenyrs</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">))</span>
+<span class="n">twostd</span> <span class="o">=</span> <span class="n">avg</span><span class="o">+</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">std</span><span class="p">)</span>
+<span class="n">zscore</span> <span class="o">=</span> <span class="p">(</span><span class="n">avg</span><span class="o">-</span><span class="mi">7357</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">std</span><span class="p">)</span>
+<span class="n">CI</span> <span class="o">=</span> <span class="nb">str</span><span class="p">([</span><span class="nb">round</span><span class="p">(</span><span class="n">avg</span><span class="o">-</span><span class="mf">1.96</span><span class="o">*</span><span class="n">std</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">avg</span><span class="o">+</span><span class="mf">1.96</span><span class="o">*</span><span class="n">std</span><span class="p">)])</span>
+
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">st</span>
+<span class="n">pvalue</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">sf</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">zscore</span><span class="p">))</span>
+<span class="n">pvalue</span>
+
+<span class="n">stat_table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span> <span class="n">avg</span><span class="p">,</span>
+                                 <span class="s1">&#39;SD&#39;</span><span class="p">,</span> <span class="n">std</span><span class="p">,</span>
+                                 <span class="s1">&#39;2SD&#39;</span><span class="p">,</span> <span class="n">twostd</span><span class="p">,</span>
+                                 <span class="s1">&#39;z-score&#39;</span><span class="p">,</span> <span class="n">zscore</span><span class="p">,</span>
+                                 <span class="s1">&#39;p-value&#39;</span><span class="p">,</span> <span class="n">pvalue</span><span class="p">,</span>
+                                 <span class="s1">&#39;95% CI&#39;</span><span class="p">,</span> <span class="n">CI</span><span class="p">,</span>
+                                 <span class="s1">&#39;2012&#39;</span><span class="p">,</span> <span class="mi">7357</span><span class="p">)</span>
+<span class="n">stat_table</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">tenyrs</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;# of Sightings in the Past 10 Years&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Number of Sightings&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Mean</th> <th>SD</th> <th>2SD</th> <th>z-score</th> <th>p-value</th> <th>95% CI</th> <th>2012</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>4857.91</td> <td>1163.53</td> <td>7184.98</td> <td>-2.14784</td> <td>0.0158631</td> <td>[2577, 7138]</td> <td>7357</td>
+        </tr>
+    </tbody>
+</table></div><img alt="_images/UFOProject_21_1.png" src="_images/UFOProject_21_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="sighting-characteristics">
+<h2>Sighting Characteristics<a class="headerlink" href="#sighting-characteristics" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reading in table</span>
+<span class="n">ufo</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;scrubbed.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sighting duration</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="n">ufo</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;duration (seconds)&#39;</span><span class="p">)</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="n">duration</span><span class="p">,</span> <span class="n">chars</span><span class="o">=</span><span class="s1">&#39;`&#39;</span><span class="p">)</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="n">duration</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
+<span class="n">ufo</span> <span class="o">=</span> <span class="n">ufo</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;duration (seconds)&#39;</span><span class="p">)</span>
+<span class="n">ufo</span> <span class="o">=</span> <span class="n">ufo</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s1">&#39;duration (seconds)&#39;</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extracting only relevant information</span>
+<span class="n">c_table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s1">&#39;Duration&#39;</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="s1">&#39;shape&#39;</span><span class="p">,</span> <span class="n">ufo</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">))</span>
+<span class="n">c2_table</span> <span class="o">=</span> <span class="n">c_table</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;Duration&#39;</span><span class="p">,</span> <span class="s1">&#39;shape&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding in buckets</span>
+<span class="n">c2_table</span> <span class="o">=</span> <span class="n">c2_table</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;Duration&#39;</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;10 and below&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">13361</span> 
+<span class="n">l</span> <span class="o">+=</span>  <span class="p">[</span><span class="s1">&#39;Between 11 and 60&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">16116</span> 
+<span class="n">l</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;Between 61 and 300&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">23956</span>
+<span class="n">l</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;Between 301 and 1000&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">13072</span>
+<span class="n">l</span> <span class="o">+=</span> <span class="p">[</span><span class="s1">&#39;Greater than 1000&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">13827</span>
+<span class="n">c2_table</span> <span class="o">=</span> <span class="n">c2_table</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s1">&#39;Bucket&#39;</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grouping by bucket</span>
+<span class="n">c2_groups</span> <span class="o">=</span> <span class="n">c2_table</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;Bucket&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating pie chart</span>
+<span class="n">explode</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">c2_groups</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Bucket&#39;</span><span class="p">))</span> 
+<span class="n">plots</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">c2_groups</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">),</span> <span class="n">labels</span><span class="o">=</span><span class="n">c2_groups</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Bucket&#39;</span><span class="p">),</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">,</span> \
+        <span class="n">explode</span><span class="o">=</span><span class="n">explode</span><span class="p">,</span> <span class="n">startangle</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;UFO Sighting Duration Breakdown (seconds)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;UFO Sighting Duration Breakdown (seconds)&#39;)
+</pre></div>
+</div>
+<img alt="_images/UFOProject_28_1.png" src="_images/UFOProject_28_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Selecting shapes and grouping negligible values into &quot;other&quot; group</span>
+<span class="n">s0_table</span> <span class="o">=</span> <span class="n">ufo</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">)</span>
+<span class="n">s_count</span> <span class="o">=</span> <span class="n">s0_table</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">)</span>
+<span class="n">s_count</span> <span class="o">=</span> <span class="n">s_count</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">other</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">s_count</span><span class="o">.</span><span class="n">take</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">s_count</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">))]</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">))</span>
+<span class="n">s_count</span> <span class="o">=</span> <span class="n">s_count</span><span class="o">.</span><span class="n">take</span><span class="p">[:</span><span class="mi">7</span><span class="p">]</span>
+<span class="n">s_count</span> <span class="o">=</span> <span class="n">s_count</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s1">&#39;other&#39;</span><span class="p">,</span> <span class="n">other</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Creating pie chart</span>
+<span class="n">explode</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">s_count</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">))</span> 
+<span class="n">plots</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">12</span><span class="p">))</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">pie</span><span class="p">(</span><span class="n">s_count</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">),</span> <span class="n">labels</span><span class="o">=</span><span class="n">s_count</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">),</span> <span class="n">autopct</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%1.1f%%</span><span class="s1">&#39;</span><span class="p">,</span> \
+        <span class="n">explode</span><span class="o">=</span><span class="n">explode</span><span class="p">,</span> <span class="n">startangle</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;UFO Shape Breakdown&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;UFO Shape Breakdown&#39;)
+</pre></div>
+</div>
+<img alt="_images/UFOProject_30_1.png" src="_images/UFOProject_30_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s0_table</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;shape&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>shape</th> <th>count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>changed </td> <td>1    </td>
+        </tr>
+        <tr>
+            <td>changing</td> <td>1962 </td>
+        </tr>
+        <tr>
+            <td>chevron </td> <td>952  </td>
+        </tr>
+        <tr>
+            <td>cigar   </td> <td>2057 </td>
+        </tr>
+        <tr>
+            <td>circle  </td> <td>7608 </td>
+        </tr>
+        <tr>
+            <td>cone    </td> <td>316  </td>
+        </tr>
+        <tr>
+            <td>crescent</td> <td>2    </td>
+        </tr>
+        <tr>
+            <td>cross   </td> <td>233  </td>
+        </tr>
+        <tr>
+            <td>cylinder</td> <td>1283 </td>
+        </tr>
+        <tr>
+            <td>delta   </td> <td>7    </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (20 rows omitted)</p></div></div>
+</div>
+</div>
+<div class="section" id="spatial-patterns">
+<h2>Spatial Patterns<a class="headerlink" href="#spatial-patterns" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ufo</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">read_table</span><span class="p">(</span><span class="s1">&#39;scrubbed.csv&#39;</span><span class="p">)</span>
+<span class="n">location</span> <span class="o">=</span> <span class="n">ufo</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">&quot;city&quot;</span><span class="p">,</span> <span class="s2">&quot;state&quot;</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Extracting US sightings</span>
+<span class="n">us</span> <span class="o">=</span> <span class="n">location</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s2">&quot;country&quot;</span><span class="p">,</span> <span class="n">are</span><span class="o">.</span><span class="n">equal_to</span><span class="p">(</span><span class="s2">&quot;us&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">states</span> <span class="o">=</span> <span class="n">us</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="mi">38</span><span class="p">)</span><span class="o">.</span><span class="n">with_column</span><span class="p">(</span><span class="s1">&#39;states&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">51</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">populations</span> <span class="o">=</span> <span class="n">states</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s1">&#39;Populations&#39;</span><span class="p">,</span> 
+                                  <span class="n">make_array</span><span class="p">(</span>
+                                      <span class="mi">731545</span><span class="p">,</span>
+                                      <span class="mi">4903185</span><span class="p">,</span>
+                                      <span class="mi">3017804</span><span class="p">,</span>
+                                      <span class="mi">7278717</span><span class="p">,</span>
+                                      <span class="mi">39512223</span><span class="p">,</span>
+                                      <span class="mi">5758736</span><span class="p">,</span>
+                                      <span class="mi">3565287</span><span class="p">,</span>
+                                      <span class="mi">973764</span><span class="p">,</span>
+                                      <span class="mi">21477737</span><span class="p">,</span>
+                                      <span class="mi">10617423</span><span class="p">,</span>
+                                      <span class="mi">1415872</span><span class="p">,</span>
+                                      <span class="mi">3155070</span><span class="p">,</span>
+                                      <span class="mi">1787065</span><span class="p">,</span>
+                                      <span class="mi">12671821</span><span class="p">,</span>
+                                      <span class="mi">6732219</span><span class="p">,</span>
+                                      <span class="mi">2913314</span><span class="p">,</span>
+                                      <span class="mi">4467673</span><span class="p">,</span>
+                                      <span class="mi">4648794</span><span class="p">,</span>
+                                      <span class="mi">6892503</span><span class="p">,</span>
+                                      <span class="mi">6045680</span><span class="p">,</span>
+                                      <span class="mi">1344212</span><span class="p">,</span>
+                                      <span class="mi">9986857</span><span class="p">,</span>
+                                      <span class="mi">5639632</span><span class="p">,</span>
+                                      <span class="mi">6137428</span><span class="p">,</span>
+                                      <span class="mi">2976149</span><span class="p">,</span>
+                                      <span class="mi">1068778</span><span class="p">,</span>
+                                      <span class="mi">10488084</span><span class="p">,</span>
+                                      <span class="mi">762062</span><span class="p">,</span>
+                                      <span class="mi">1934408</span><span class="p">,</span>
+                                      <span class="mi">1359711</span><span class="p">,</span>
+                                      <span class="mi">8882190</span><span class="p">,</span>
+                                      <span class="mi">2096829</span><span class="p">,</span>
+                                      <span class="mi">3080156</span><span class="p">,</span>
+                                      <span class="mi">19453561</span><span class="p">,</span>
+                                      <span class="mi">11689100</span><span class="p">,</span>
+                                      <span class="mi">3956971</span><span class="p">,</span>
+                                      <span class="mi">4217737</span><span class="p">,</span>
+                                      <span class="mi">12801989</span><span class="p">,</span>
+                                      <span class="mi">1059361</span><span class="p">,</span>
+                                      <span class="mi">5148714</span><span class="p">,</span>
+                                      <span class="mi">884659</span><span class="p">,</span>
+                                      <span class="mi">6829174</span><span class="p">,</span>
+                                      <span class="mi">28995881</span><span class="p">,</span>
+                                      <span class="mi">3205958</span><span class="p">,</span>
+                                      <span class="mi">8535519</span><span class="p">,</span>
+                                      <span class="mi">623989</span><span class="p">,</span>
+                                      <span class="mi">7614893</span><span class="p">,</span>
+                                      <span class="mi">5822434</span><span class="p">,</span>
+                                      <span class="mi">1792147</span><span class="p">,</span>
+                                      <span class="mi">578759</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normalizing to population</span>
+<span class="n">pc_array</span> <span class="o">=</span> <span class="n">populations</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="n">populations</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Populations&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100000</span>
+<span class="n">percap</span> <span class="o">=</span> <span class="n">populations</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s1">&#39;Population Per Capita&#39;</span><span class="p">,</span> <span class="n">pc_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">percap</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="s1">&#39;Population Per Capita&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;UFO Sightings by US State Per Capita&quot;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;State&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;State&#39;)
+</pre></div>
+</div>
+<img alt="_images/UFOProject_38_1.png" src="_images/UFOProject_38_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lower</span> <span class="o">=</span> <span class="n">percap</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">)</span>
+<span class="n">upper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">upper</span><span class="p">(</span><span class="n">lower</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">percap2</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">,</span> <span class="n">upper</span><span class="p">,</span> <span class="s1">&#39;count per cap&#39;</span><span class="p">,</span> <span class="n">pc_array</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Contructing heat map for better visualization</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">locations</span><span class="o">=</span><span class="n">percap2</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">),</span> <span class="n">locationmode</span><span class="o">=</span><span class="s2">&quot;USA-states&quot;</span><span class="p">,</span> \
+                    <span class="n">color</span><span class="o">=</span><span class="n">percap2</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;count per cap&#39;</span><span class="p">),</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;usa&quot;</span><span class="p">,</span> \
+                    <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">&quot;geyser&quot;</span><span class="p">,</span> <span class="n">range_color</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">55</span><span class="p">))</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">32</span><span class="o">-</span><span class="n">e8a9a0c783a1</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Contructing heat map for better visualization</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth</span><span class="p">(</span><span class="n">locations</span><span class="o">=</span><span class="n">percap2</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">),</span> <span class="n">locationmode</span><span class="o">=</span><span class="s2">&quot;USA-states&quot;</span><span class="p">,</span> \
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                     <span class="n">color</span><span class="o">=</span><span class="n">percap2</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;count per cap&#39;</span><span class="p">),</span> <span class="n">scope</span><span class="o">=</span><span class="s2">&quot;usa&quot;</span><span class="p">,</span> \
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;plotly&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">comparison</span> <span class="o">=</span> <span class="n">percap</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;Population Per Capita&#39;</span><span class="p">,</span> <span class="n">descending</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">45</span><span class="p">))</span>
+<span class="n">comp1</span> <span class="o">=</span> <span class="n">comparison</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">comp2</span> <span class="o">=</span> <span class="n">comparison</span><span class="o">.</span><span class="n">exclude</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>state</th> <th>count</th> <th>states</th> <th>Populations</th> <th>Population Per Capita</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>al   </td> <td>642  </td> <td>2     </td> <td>4903185    </td> <td>13.0935              </td>
+        </tr>
+        <tr>
+            <td>ms   </td> <td>375  </td> <td>25    </td> <td>2976149    </td> <td>12.6002              </td>
+        </tr>
+        <tr>
+            <td>la   </td> <td>558  </td> <td>18    </td> <td>4648794    </td> <td>12.0031              </td>
+        </tr>
+        <tr>
+            <td>tx   </td> <td>3447 </td> <td>43    </td> <td>28995881   </td> <td>11.8879              </td>
+        </tr>
+        <tr>
+            <td>ga   </td> <td>1255 </td> <td>10    </td> <td>10617423   </td> <td>11.8202              </td>
+        </tr>
+    </tbody>
+</table></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Top five and lowest five states sightings per capita</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">comp1</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">),</span> <span class="n">comp1</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Population Per Capita&#39;</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Top Five&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">comp2</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">),</span> <span class="n">comp2</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;Population Per Capita&#39;</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Bottom Five&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;UFO Sightings by US State Per Capita (100,000)&quot;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;State&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x21ad6c90c08&gt;
+</pre></div>
+</div>
+<img alt="_images/UFOProject_43_1.png" src="_images/UFOProject_43_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Statistical analysis of Washington state&#39;s significance in UFO sightings </span>
+<span class="n">percap</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>state</th> <th>count</th> <th>states</th> <th>Populations</th> <th>Population Per Capita</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ca   </td> <td>8912 </td> <td>5     </td> <td>39512223   </td> <td>22.555               </td>
+        </tr>
+        <tr>
+            <td>wa   </td> <td>3966 </td> <td>47    </td> <td>7614893    </td> <td>52.0822              </td>
+        </tr>
+        <tr>
+            <td>fl   </td> <td>3835 </td> <td>9     </td> <td>21477737   </td> <td>17.8557              </td>
+        </tr>
+        <tr>
+            <td>tx   </td> <td>3447 </td> <td>43    </td> <td>28995881   </td> <td>11.8879              </td>
+        </tr>
+        <tr>
+            <td>ny   </td> <td>2980 </td> <td>34    </td> <td>19453561   </td> <td>15.3185              </td>
+        </tr>
+        <tr>
+            <td>il   </td> <td>2499 </td> <td>14    </td> <td>12671821   </td> <td>19.7209              </td>
+        </tr>
+        <tr>
+            <td>az   </td> <td>2414 </td> <td>4     </td> <td>7278717    </td> <td>33.1652              </td>
+        </tr>
+        <tr>
+            <td>pa   </td> <td>2366 </td> <td>38    </td> <td>12801989   </td> <td>18.4815              </td>
+        </tr>
+        <tr>
+            <td>oh   </td> <td>2275 </td> <td>35    </td> <td>11689100   </td> <td>19.4626              </td>
+        </tr>
+        <tr>
+            <td>mi   </td> <td>1836 </td> <td>22    </td> <td>9986857    </td> <td>18.3842              </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (40 rows omitted)</p></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">us</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>65114
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">us</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;state&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>state</th> <th>count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ca   </td> <td>8912 </td>
+        </tr>
+        <tr>
+            <td>wa   </td> <td>3966 </td>
+        </tr>
+        <tr>
+            <td>fl   </td> <td>3835 </td>
+        </tr>
+        <tr>
+            <td>tx   </td> <td>3447 </td>
+        </tr>
+        <tr>
+            <td>ny   </td> <td>2980 </td>
+        </tr>
+        <tr>
+            <td>il   </td> <td>2499 </td>
+        </tr>
+        <tr>
+            <td>az   </td> <td>2414 </td>
+        </tr>
+        <tr>
+            <td>pa   </td> <td>2366 </td>
+        </tr>
+        <tr>
+            <td>oh   </td> <td>2275 </td>
+        </tr>
+        <tr>
+            <td>mi   </td> <td>1836 </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (42 rows omitted)</p></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wash_pop</span> <span class="o">=</span> <span class="mi">7600000</span>
+<span class="n">us_pop</span> <span class="o">=</span> <span class="mi">328000000</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">65114</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">wash_pop</span> <span class="o">/</span> <span class="n">us_pop</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1547
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">*</span><span class="n">p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1508.739024390244
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wash_count</span> <span class="o">=</span> <span class="mi">3966</span>  <span class="c1"># actual amount of sightings occuring in Washington state in the dataset</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Binomial distirbution simulation</span>
+<span class="n">nsim</span> <span class="o">=</span> <span class="mi">100000</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">nsim</span><span class="p">))</span> 
+<span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Expected Value&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Binomial Distribution of Washington Counts&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Binomial Distribution of Washington Counts&#39;)
+</pre></div>
+</div>
+<img alt="_images/UFOProject_50_1.png" src="_images/UFOProject_50_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comparing above distribution to observed value</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">binomial</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="mi">100000</span><span class="p">))</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">p</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Expected Value&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">wash_count</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Observed Value&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Binomial Distribution of Washington Counts&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x21ad62d73c8&gt;
+</pre></div>
+</div>
+<img alt="_images/UFOProject_51_1.png" src="_images/UFOProject_51_1.png" />
+</div>
+</div>
+<p><em>We can reject hypothesis that the amount of Washington sightings follows a binomial distribution</em></p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="Linear_Regression.html" title="previous page">Single and Multiple Linear Regression</a>
+    <a class='right-next' id="next-link" href="data_cleaning.html" title="next page">Data Cleaning and Investigation</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Alice Saparov<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

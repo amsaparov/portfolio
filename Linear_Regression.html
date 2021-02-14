@@ -1,0 +1,995 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Single and Multiple Linear Regression &#8212; Alice&#39;s Projects</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="UFO Group Project" href="UFOProject.html" />
+    <link rel="prev" title="Linear Regression and PCA" href="LinReg_PCA.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/wave.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Alice's Projects</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   About Me
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="content.html">
+   Project Notebooks
+  </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="LinReg_PCA.html">
+     Linear Regression and PCA
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Single and Multiple Linear Regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="UFOProject.html">
+     UFO Group Project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_cleaning.html">
+     Data Cleaning and Investigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ab_testing.html">
+     A/B Testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="fuzzy_matching.html">
+     Fuzzy Matching
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="convolutions.html">
+     FFT - Convolutions and Filtering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gradient_optimization.html">
+     Gradient Optimization
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Linear_Regression.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLinear_Regression.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/Linear_Regression.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#single-linear-regression">
+   Single Linear Regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#amazon-river-water-levels">
+     Amazon River Water Levels
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#triple-jump-distances-vs-vertical-jump-heights">
+     Triple Jump Distances vs. Vertical Jump Heights
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cryptocurrencies">
+     Cryptocurrencies
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiple-linear-regression">
+   Multiple Linear Regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fitting-a-multiple-linear-regression-with-four-predictors-gestational-days-maternal-smoking-maternal-height-and-maternal-pregagncy-weight">
+     Fitting a multiple linear regression with four predictors: Gestational Days, Maternal Smoking, Maternal Height and Maternal Pregagncy Weight.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-and-comparing-multiple-linear-regression-models">
+     Creating and comparing multiple linear regression models
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="single-and-multiple-linear-regression">
+<h1>Single and Multiple Linear Regression<a class="headerlink" href="#single-and-multiple-linear-regression" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">datascience</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plots</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="single-linear-regression">
+<h2>Single Linear Regression<a class="headerlink" href="#single-linear-regression" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Necessary functions for regression </span>
+
+<span class="c1">#mean squared error</span>
+<span class="k">def</span> <span class="nf">line_mse_CG</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">!=</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;arrays are diff lengths&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">mse</span><span class="p">(</span><span class="n">any_slope</span><span class="p">,</span> <span class="n">any_intercept</span><span class="p">):</span>
+        <span class="n">estimate</span> <span class="o">=</span> <span class="n">any_slope</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">any_intercept</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">y</span> <span class="o">-</span> <span class="n">estimate</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span> 
+    <span class="k">return</span> <span class="n">minimize</span><span class="p">(</span><span class="n">mse</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;CG&quot;</span><span class="p">)</span> 
+
+<span class="c1">#mean absolute error </span>
+<span class="k">def</span> <span class="nf">jump_mae</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">!=</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;arrays are of diff lengths&#39;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">mae</span><span class="p">(</span><span class="n">any_slope</span><span class="p">,</span> <span class="n">any_intercept</span><span class="p">):</span>
+        <span class="n">estimate</span> <span class="o">=</span> <span class="n">any_slope</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">any_intercept</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">estimate</span><span class="p">)))</span>
+    <span class="k">return</span> <span class="n">minimize</span><span class="p">(</span><span class="n">mae</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;CG&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="amazon-river-water-levels">
+<h3>Amazon River Water Levels<a class="headerlink" href="#amazon-river-water-levels" title="Permalink to this headline">¶</a></h3>
+<p>The data below contains the high and low water levels of the Amazon River at Iquitos, Peru (in meters). I am analyzing this data to determine if deforestation has resulted in changes in the water balance of the Amazon basin.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import data</span>
+<span class="n">amazon_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;amazon.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#visualize</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">amazon_df</span><span class="o">.</span><span class="n">Year</span><span class="p">,</span> <span class="n">amazon_df</span><span class="o">.</span><span class="n">High</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;High v Year&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;High (water balance)&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">amazon_df</span><span class="o">.</span><span class="n">Year</span><span class="p">,</span> <span class="n">amazon_df</span><span class="o">.</span><span class="n">Low</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Low v Year&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Year&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Low (water balance)&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">amazon_df</span><span class="o">.</span><span class="n">Low</span><span class="p">,</span> <span class="n">amazon_df</span><span class="o">.</span><span class="n">High</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;High v Low&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Low (water balance)&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;High (water balance)&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Linear_Regression_6_0.png" src="_images/Linear_Regression_6_0.png" />
+<img alt="_images/Linear_Regression_6_1.png" src="_images/Linear_Regression_6_1.png" />
+<img alt="_images/Linear_Regression_6_2.png" src="_images/Linear_Regression_6_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#calculate least squares regression </span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;High v Year:&#39;</span><span class="p">,</span> <span class="n">line_mse_CG</span><span class="p">(</span><span class="n">amazon_df</span><span class="o">.</span><span class="n">Year</span><span class="p">,</span> <span class="n">amazon_df</span><span class="o">.</span><span class="n">High</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Low v Year:&#39;</span><span class="p">,</span> <span class="n">line_mse_CG</span><span class="p">(</span><span class="n">amazon_df</span><span class="o">.</span><span class="n">Year</span><span class="p">,</span> <span class="n">amazon_df</span><span class="o">.</span><span class="n">Low</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;High v Low:&#39;</span><span class="p">,</span> <span class="n">line_mse_CG</span><span class="p">(</span><span class="n">amazon_df</span><span class="o">.</span><span class="n">Low</span><span class="p">,</span> <span class="n">amazon_df</span><span class="o">.</span><span class="n">High</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>High v Year: [ 1.79678158e-01 -3.27840089e+02]
+Low v Year: [-1.06430392e-02  4.05262179e+01]
+High v Low: [-1.40668020e-02  2.64010212e+01]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The slope for High v Year was 0.17 meters which means that each year, on average, the high water level increased by 0.17 meters. For Low v Year, m = -0.0106 meters, so the low water level was decreasing by 0.0106 meters per year. Finally, the slope of the High v Low water levels was -0.014 meters, thus the high water level decreased by 0.014 meters for each meter increase of the low water level.</p>
+</div>
+<div class="section" id="triple-jump-distances-vs-vertical-jump-heights">
+<h3>Triple Jump Distances vs. Vertical Jump Heights<a class="headerlink" href="#triple-jump-distances-vs-vertical-jump-heights" title="Permalink to this headline">¶</a></h3>
+<p>Does skill in one sport imply skill in a related sport? The following data was collected by observing 40 collegiate level soccer players. Distances in both jump activities were measured in centimeters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#read in the df</span>
+<span class="n">jumps_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;triple_vertical.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Least squares line:&#39;</span><span class="p">,</span> <span class="n">line_mse_CG</span><span class="p">(</span><span class="n">jumps_df</span><span class="o">.</span><span class="n">triple</span><span class="p">,</span> <span class="n">jumps_df</span><span class="o">.</span><span class="n">vertical</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Least absolute deviations line:&#39;</span><span class="p">,</span> <span class="n">jump_mae</span><span class="p">(</span><span class="n">jumps_df</span><span class="o">.</span><span class="n">triple</span><span class="p">,</span> <span class="n">jumps_df</span><span class="o">.</span><span class="n">vertical</span><span class="p">))</span>
+
+<span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">jumps_df</span><span class="o">.</span><span class="n">triple</span><span class="p">,</span> <span class="n">jumps_df</span><span class="o">.</span><span class="n">vertical</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Vertical v Triple Jump Distance&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Triple Jump Distance&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">350</span><span class="p">,</span><span class="mi">850</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Vertical Jump Height&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">800</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">yls</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.56628095</span><span class="o">+</span><span class="mf">0.09295685</span><span class="o">*</span><span class="n">x</span>
+<span class="n">yla</span> <span class="o">=</span> <span class="mf">0.00016413</span><span class="o">+</span><span class="mf">0.09005728</span><span class="o">*</span><span class="n">x</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">yls</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Least square&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;pink&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">yla</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Least absolute&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.5</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Least squares line:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [ 0.09295685 -1.56628095]
+Least absolute deviations line: [0.09005728 0.00016413]
+</pre></div>
+</div>
+<img alt="_images/Linear_Regression_11_2.png" src="_images/Linear_Regression_11_2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#creating a regression parameters functions that takes in a data frame and computes the correlation, slope, and intercept</span>
+<span class="k">def</span> <span class="nf">regression_parameters</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">stx</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">sty</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">y</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">!=</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;arrays are diff lengths&#39;</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">stx</span> <span class="o">*</span> <span class="n">sty</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">slope</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">intercept</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">make_array</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">slope</span><span class="p">,</span> <span class="n">intercept</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#applying it to the jumps df</span>
+<span class="n">parameters</span> <span class="o">=</span> <span class="n">regression_parameters</span><span class="p">(</span><span class="n">jumps_df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;r:&#39;</span><span class="p">,</span> <span class="n">parameters</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="s1">&#39;; slope:&#39;</span><span class="p">,</span> <span class="n">parameters</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="s1">&#39;; intercept:&#39;</span><span class="p">,</span> <span class="n">parameters</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>r: 0.8343076972837594 ; slope: 0.0929572816051218 ; intercept: -1.5665209729634526
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="cryptocurrencies">
+<h3>Cryptocurrencies<a class="headerlink" href="#cryptocurrencies" title="Permalink to this headline">¶</a></h3>
+<p>From a larger datset on <a class="reference external" href="https://www.kaggle.com/jessevent/all-crypto-currencies/data">Kaggle</a> I chose the two most valuable crpytocurrencies, Bitcoin (BTC) and Ethereum (ETH) from which I obtained two tables called <code class="docutils literal notranslate"><span class="pre">btc</span></code> and <code class="docutils literal notranslate"><span class="pre">eth</span></code>. Each has 5 columns:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">date</span></code>, the date</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">open</span></code>, the value of the currency at the beginning of the day</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">close</span></code>, the value of the currency at the end of the day</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">market</span></code>, the market cap or total dollar value invested in the currency</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">day</span></code>, the number of days since the start of our data</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">btc_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;btc.csv&#39;</span><span class="p">)</span>
+<span class="n">eth_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;eth.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#verifying that dates are the same in both data frames</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">btc_df</span><span class="o">.</span><span class="n">date</span><span class="p">,</span> <span class="n">eth_df</span><span class="o">.</span><span class="n">date</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2015-09-29</td>
+      <td>2015-09-29</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2015-09-30</td>
+      <td>2015-09-30</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2015-10-01</td>
+      <td>2015-10-01</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2015-10-02</td>
+      <td>2015-10-02</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2015-10-03</td>
+      <td>2015-10-03</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#plots to investigate and visualize the data</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">btc_df</span><span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="n">btc_df</span><span class="o">.</span><span class="n">open</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Opening Price of BTC over Time&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Days&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Opening Price ($)&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plots</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">eth_df</span><span class="o">.</span><span class="n">day</span><span class="p">,</span> <span class="n">eth_df</span><span class="o">.</span><span class="n">open</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Opening Price of ETH over Time&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Days&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Opening Price ($)&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">btc_df</span><span class="o">.</span><span class="n">open</span><span class="p">,</span> <span class="n">eth_df</span><span class="o">.</span><span class="n">open</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Opening Price of ETH v BTC&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;BTC Opening Price&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ETH Opening Price&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Linear_Regression_17_0.png" src="_images/Linear_Regression_17_0.png" />
+<img alt="_images/Linear_Regression_17_1.png" src="_images/Linear_Regression_17_1.png" />
+<img alt="_images/Linear_Regression_17_2.png" src="_images/Linear_Regression_17_2.png" />
+</div>
+</div>
+<p>The opening of price of BTC and ETH over time do appear to be correlated. The plots have a similar increasing trend and general shape even though the actual opening prices are different.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#calculating the actual correlation</span>
+<span class="k">def</span> <span class="nf">corr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">!=</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;arrays are diff lengths&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">y</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">corr</span><span class="p">(</span><span class="n">btc_df</span><span class="o">.</span><span class="n">open</span><span class="p">,</span> <span class="n">eth_df</span><span class="o">.</span><span class="n">open</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9250325764148283
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#predicting ETH price from BTC</span>
+<span class="k">def</span> <span class="nf">eth_predictor</span><span class="p">(</span><span class="n">btc_price</span><span class="p">):</span>
+    <span class="n">btc_eth_op_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">btc_df</span><span class="o">.</span><span class="n">open</span><span class="p">,</span> <span class="n">eth_df</span><span class="o">.</span><span class="n">open</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">parameters</span> <span class="o">=</span> <span class="n">regression_parameters</span><span class="p">(</span><span class="n">btc_eth_op_df</span><span class="p">)</span>
+    <span class="n">slope</span> <span class="o">=</span> <span class="n">parameters</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">intercept</span> <span class="o">=</span> <span class="n">parameters</span><span class="o">.</span><span class="n">item</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">intercept</span> <span class="o">+</span> <span class="n">slope</span><span class="o">*</span><span class="n">btc_price</span>
+
+<span class="n">eth_predictor</span><span class="p">(</span><span class="n">btc_df</span><span class="o">.</span><span class="n">open</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0       14.178238
+1       14.058354
+2       14.026117
+3       14.089585
+4       14.086562
+          ...    
+830    881.730865
+831    885.015087
+832    832.069588
+833    763.942115
+834    736.983280
+Name: open, Length: 835, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">btc_df</span><span class="o">.</span><span class="n">open</span><span class="p">,</span> <span class="n">eth_df</span><span class="o">.</span><span class="n">open</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;real&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Opening Price of ETH vs BTC&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;BTC Opening Price&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;ETH Opening Price&#39;</span><span class="p">)</span>
+<span class="n">predicted</span> <span class="o">=</span> <span class="n">eth_predictor</span><span class="p">(</span><span class="n">btc_df</span><span class="o">.</span><span class="n">open</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">btc_df</span><span class="o">.</span><span class="n">open</span><span class="p">,</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;predicted&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Linear_Regression_21_0.png" src="_images/Linear_Regression_21_0.png" />
+</div>
+</div>
+<p>Based on the plot above, I am more confident making predictions for lower opening prices of BTC since the real (blue) points are closer to the predicted (red) line. Although, the predicted ETH opening price below a BTC opening price of 5000 may consistently be underpredicted. Furthermore, the real prices of ETH are much more scattered at BTC prices over 15000. In general, the original scatter plot has much less spread at lower opening prices, and after about 12000 the points start fanning out and they become more scattered. Overall, if a plot of residuals was created, it is unlikely to look like a ‘shapeless cloud’ which means that the linear fit is unreasonable.</p>
+</div>
+</div>
+<div class="section" id="multiple-linear-regression">
+<h2>Multiple Linear Regression<a class="headerlink" href="#multiple-linear-regression" title="Permalink to this headline">¶</a></h2>
+<p>The data below contains the following variables for 1,174 mother-baby pairs: the baby’s birth weight in ounces, the number of gestational days, the mother’s age in completed years, the mother’s height in inches, pregnancy weight in pounds, and whether or not the mother smoked during pregnancy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">baby_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;baby.csv&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#visualize the data</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Birth Weight v Gestational Days&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Gestational Days&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Birth Weight&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Birth Weight v Maternal Age&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Maternal Age&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Birth Weight&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span> <span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Birth Weight v Maternal Height&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Maternal Height&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Birth Weight&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plots</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">4</span><span class="p">],</span> <span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Birth Weight v Maternal Pregnancy Weight&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Maternal Pregnancy Weight&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Birth Weight&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">baby_df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Maternal Smoker&#39;</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;Birth Weight&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span> 
+<span class="n">plots</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Birth Weight&#39;</span><span class="p">)</span>
+<span class="n">plots</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Linear_Regression_26_0.png" src="_images/Linear_Regression_26_0.png" />
+<img alt="_images/Linear_Regression_26_1.png" src="_images/Linear_Regression_26_1.png" />
+<img alt="_images/Linear_Regression_26_2.png" src="_images/Linear_Regression_26_2.png" />
+<img alt="_images/Linear_Regression_26_3.png" src="_images/Linear_Regression_26_3.png" />
+<img alt="_images/Linear_Regression_26_4.png" src="_images/Linear_Regression_26_4.png" />
+</div>
+</div>
+<p>There appears to be a positive linear relationship in Birth Weight v Gestational days. The Birth Weight v Maternal Age looks like a shapeless cloud/there does not appear to be a discernable trend. The Birth Weight v Maternal Height plot also does not appear to have much of a trend/maybe slightly positive, but the points are generally more on the right side of the plot. The Birth Weight v Maternal Pregnancy weight also does not seem to have a trend/maybe slightly positive. The box plot shows that non smoking mothers have a a larger spread in birth weight (more outliers). The average birth weight for a non smoking mother is greater (about 123 oz) than that of smoking mothers (about 115 oz).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Functions for linear regression and calculating confidence intervals through bootstrapping </span>
+<span class="k">def</span> <span class="nf">lin_reg</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">stx</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sty</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">y</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">!=</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;arrays are diff lengths&#39;</span><span class="p">)</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">stx</span> <span class="o">*</span> <span class="n">sty</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">intercept</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="o">-</span> <span class="n">m</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;intercept: &#39;</span><span class="p">,</span> <span class="n">intercept</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;slope: &#39;</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">standard_units</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="s2">&quot;Convert any array of numbers to standard units.&quot;</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  
+
+<span class="k">def</span> <span class="nf">correlation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">x_in_standard_units</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y_in_standard_units</span> <span class="o">=</span> <span class="n">standard_units</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">!=</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;arrays are of different lengths&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x_in_standard_units</span> <span class="o">*</span> <span class="n">y_in_standard_units</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">slope</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">!=</span><span class="nb">len</span><span class="p">(</span><span class="n">y</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;arrays are of different lengths&#39;</span><span class="p">)</span>
+    <span class="k">return</span>  <span class="n">correlation</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">bootstrap_slope</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">repetitions</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">slopes</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">repetitions</span><span class="p">):</span>
+        <span class="n">bootstrap_sample</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="n">bootstrap_slope</span> <span class="o">=</span> <span class="n">slope</span><span class="p">(</span><span class="n">bootstrap_sample</span><span class="p">[</span><span class="n">x</span><span class="p">],</span> <span class="n">bootstrap_sample</span><span class="p">[</span><span class="n">y</span><span class="p">])</span>
+        <span class="n">slopes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">slopes</span><span class="p">,</span> <span class="n">bootstrap_slope</span><span class="p">)</span>
+    
+    <span class="n">left</span> <span class="o">=</span> <span class="n">percentile</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">slopes</span><span class="p">)</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="n">percentile</span><span class="p">(</span><span class="mf">97.5</span><span class="p">,</span> <span class="n">slopes</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;95% CI: &#39;</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="n">right</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Gestational Days (as the predictor) and Birth Weigth (as the response)</span>
+<span class="n">lin_reg</span><span class="p">(</span><span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">bootstrap_slope</span><span class="p">(</span><span class="n">baby_df</span><span class="p">,</span> <span class="s1">&#39;Gestational Days&#39;</span><span class="p">,</span> <span class="s1">&#39;Birth Weight&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>intercept:  -10.754138914450422
+slope:  0.4665568769492159
+95% CI:  0.3675298976371332 to 0.540001527609314
+</pre></div>
+</div>
+</div>
+</div>
+<p>The slope is 0.47 which means that for every additional gestational day, the birth weight increases by 0.47 ounces. The predictor is significant based on the 95% confidence interval constructed because the interval does not contain 0. Overall, it does make sense for birth weight to be associated with gestational age since the more time the baby spends in gestation the more it can grow.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Maternal Age (as the predictor) and Birth Weigth (as the response)</span>
+<span class="n">lin_reg</span><span class="p">(</span><span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">bootstrap_slope</span><span class="p">(</span><span class="n">baby_df</span><span class="p">,</span> <span class="s1">&#39;Maternal Age&#39;</span><span class="p">,</span> <span class="s1">&#39;Birth Weight&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>intercept:  117.14790872185156
+slope:  0.08500766941582519
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95% CI:  -0.11523407711897808 to 0.23929062767679107
+</pre></div>
+</div>
+</div>
+</div>
+<p>The slope is 0.085 which means that for every unit increase (year) in maternal age, the birth weight increases by 0.085 ounces. Based on the 95% CI the predictor cannot be claimed as significant because the interval contains 0. Overall, it does not make sense for the mother’s age to be strongly associated with the birth weight.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Maternal Height (as the predictor) and Birth Weigth (as the response)</span>
+<span class="n">lin_reg</span><span class="p">(</span><span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span> <span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">bootstrap_slope</span><span class="p">(</span><span class="n">baby_df</span><span class="p">,</span> <span class="s1">&#39;Maternal Height&#39;</span><span class="p">,</span> <span class="s1">&#39;Birth Weight&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>intercept:  24.796263075888632
+slope:  1.478019351928435
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95% CI:  1.0045217062594758 to 1.9975258609373774
+</pre></div>
+</div>
+</div>
+</div>
+<p>The slope is 1.48 which indicates that a unit increase (inch) in the maternal height increases the birth weight by 1.48 ounces. Based on the 95% CI, this predictor is significant because 0 is not within the intercal. This means there is evidence to reject the null, thus the slope is different than 0. The results do seem to make sense, a taller mother is naturally larger and therefore, genetically, may have a larger baby.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Maternal Smoker (as the predictor) and Birth Weigth (as the response)</span>
+<span class="n">baby_01_df</span> <span class="o">=</span> <span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">lin_reg</span><span class="p">(</span><span class="n">baby_01_df</span><span class="p">,</span> <span class="n">baby_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">bootstrap_slope</span><span class="p">(</span><span class="n">baby_df</span><span class="p">,</span> <span class="s1">&#39;Maternal Smoker&#39;</span><span class="p">,</span> <span class="s1">&#39;Birth Weight&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>intercept:  123.08531468531473
+slope:  -9.266142572025034
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95% CI:  -11.212015233470169 to -7.393287404414941
+</pre></div>
+</div>
+</div>
+</div>
+<p>The slope is -9.27 which means that the baby weight decreases by 9.27 ounces from non smoking mother (0) to a smoking mother (1). This predictor is significant based on the 95% CI constructed because a slope of 0 is not found in the intervel, and thus providing evidence that the slope is different than 0. The results do make sense because it is known that drugs are bad during pregnancy, and therefore can harm the baby’s health resulting in a smaller/less healthy baby potentially.</p>
+<div class="section" id="fitting-a-multiple-linear-regression-with-four-predictors-gestational-days-maternal-smoking-maternal-height-and-maternal-pregagncy-weight">
+<h3>Fitting a multiple linear regression with four predictors: Gestational Days, Maternal Smoking, Maternal Height and Maternal Pregagncy Weight.<a class="headerlink" href="#fitting-a-multiple-linear-regression-with-four-predictors-gestational-days-maternal-smoking-maternal-height-and-maternal-pregagncy-weight" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#residual sum of squares function</span>
+<span class="k">def</span> <span class="nf">rss</span><span class="p">(</span><span class="n">n0</span><span class="p">,</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span><span class="n">n3</span><span class="p">,</span> <span class="n">n4</span><span class="p">):</span>
+    <span class="n">estimate</span> <span class="o">=</span> <span class="n">n0</span><span class="o">+</span><span class="n">n1</span><span class="o">*</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Gestational Days&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">n2</span><span class="o">*</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Maternal Height&#39;</span><span class="p">]</span>\
+    <span class="o">+</span><span class="n">n3</span><span class="o">*</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Maternal Pregnancy Weight&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">n4</span><span class="o">*</span><span class="n">baby_01_df</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Birth Weight&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">estimate</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">mlr</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">rss</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;CG&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;int:&#39;</span><span class="p">,</span> <span class="n">mlr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;coeff gestational days:&#39;</span><span class="p">,</span> <span class="n">mlr</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;coeff maternal height:&#39;</span><span class="p">,</span> <span class="n">mlr</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;coeff maternal pregnancy weight:&#39;</span><span class="p">,</span> <span class="n">mlr</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;coeff maternal smoker:&#39;</span><span class="p">,</span> <span class="n">mlr</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int: -52.64701171647796
+coeff gestational days: 0.41050879724525
+coeff maternal height: 0.8149417122726399
+coeff maternal pregnancy weight: 0.0672408102898637
+coeff maternal smoker: -8.371743326991718
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-and-comparing-multiple-linear-regression-models">
+<h3>Creating and comparing multiple linear regression models<a class="headerlink" href="#creating-and-comparing-multiple-linear-regression-models" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># using the residual sum of squares</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">predicted</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">()</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">partial_df</span> <span class="o">=</span> <span class="n">baby_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">rss</span><span class="p">(</span><span class="n">n0</span><span class="p">,</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span><span class="n">n3</span><span class="p">,</span> <span class="n">n4</span><span class="p">):</span>
+        <span class="n">estimate</span> <span class="o">=</span> <span class="n">n0</span><span class="o">+</span><span class="n">n1</span><span class="o">*</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Gestational Days&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">n2</span><span class="o">*</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Maternal Height&#39;</span><span class="p">]</span>\
+        <span class="o">+</span><span class="n">n3</span><span class="o">*</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Maternal Pregnancy Weight&#39;</span><span class="p">]</span><span class="o">+</span><span class="n">n4</span><span class="o">*</span><span class="n">baby_01_df</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Birth Weight&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">estimate</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="n">partial_mlr</span> <span class="o">=</span> <span class="n">minimize</span><span class="p">(</span><span class="n">rss</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;CG&quot;</span><span class="p">)</span>
+
+    <span class="n">partial_pred</span> <span class="o">=</span> <span class="n">partial_mlr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">partial_mlr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Gestational Days&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> \
+        <span class="o">+</span><span class="n">partial_mlr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Maternal Height&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">partial_mlr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Maternal Pregnancy Weight&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>\
+        <span class="o">+</span><span class="n">partial_mlr</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">*</span><span class="n">baby_01_df</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+    <span class="n">predicted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">predicted</span><span class="p">,</span> <span class="n">partial_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_dev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Birth Weight&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">predicted</span><span class="p">)]</span><span class="o">-</span><span class="n">predicted</span><span class="p">))</span>
+<span class="n">mean_rel_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Birth Weight&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">predicted</span><span class="p">)]</span><span class="o">-</span><span class="n">predicted</span><span class="p">)</span>\
+                         <span class="o">/</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Birth Weight&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">predicted</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean deviation:&#39;</span><span class="p">,</span> <span class="n">mean_dev</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean relative error:&#39;</span><span class="p">,</span> <span class="n">mean_rel_error</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#using the sklearn linear regression</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">baby_df</span><span class="p">[[</span><span class="s1">&#39;Gestational Days&#39;</span><span class="p">,</span> <span class="s1">&#39;Maternal Height&#39;</span><span class="p">,</span> <span class="s1">&#39;Maternal Smoker&#39;</span><span class="p">]]</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Birth Weight&#39;</span><span class="p">]</span>
+
+<span class="n">regress</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>  
+<span class="n">regress</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">predicted_lr</span> <span class="o">=</span> <span class="n">make_array</span><span class="p">()</span>
+    
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">regress</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>  
+    <span class="n">regress</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">Y</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    
+    <span class="n">lr_pred</span><span class="o">=</span><span class="n">regress</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="n">i</span><span class="p">]])</span>
+    
+    <span class="n">predicted_lr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">predicted</span><span class="p">,</span> <span class="n">lr_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mean_dev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Birth Weight&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">predicted_lr</span><span class="p">)]</span><span class="o">-</span><span class="n">predicted_lr</span><span class="p">))</span>
+<span class="n">mean_rel_error</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Birth Weight&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">predicted_lr</span><span class="p">)]</span><span class="o">-</span><span class="n">predicted_lr</span><span class="p">)</span>\
+                         <span class="o">/</span><span class="n">baby_df</span><span class="p">[</span><span class="s1">&#39;Birth Weight&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">predicted_lr</span><span class="p">)])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean deviation:&#39;</span><span class="p">,</span> <span class="n">mean_dev</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean relative error:&#39;</span><span class="p">,</span> <span class="n">mean_rel_error</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The models performed similarily, although the mean relative error was just barely smaller for the second model which excluded the maternal pregnancy weight.  Also, the sklearn linear regression is much faster computationally.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="LinReg_PCA.html" title="previous page">Linear Regression and PCA</a>
+    <a class='right-next' id="next-link" href="UFOProject.html" title="next page">UFO Group Project</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Alice Saparov<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
