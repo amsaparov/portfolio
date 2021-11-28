@@ -380,7 +380,7 @@ fig = px.choropleth(locations=percap2.column('state'), locationmode="USA-states"
 fig.show()
 
 
-# In[77]:
+# In[33]:
 
 
 comparison = percap.sort('Population Per Capita', descending = True).exclude(np.arange(5,45))
@@ -388,7 +388,7 @@ comp1 = comparison.exclude(np.arange(5, 10))
 comp2 = comparison.exclude(np.arange(0, 5))
 
 
-# In[78]:
+# In[34]:
 
 
 # Top five and lowest five states sightings per capita
@@ -400,26 +400,26 @@ plots.ylabel('Count')
 plots.legend()
 
 
-# In[159]:
+# In[35]:
 
 
 # Statistical analysis of Washington state's significance in UFO sightings 
 percap.sort('count', descending=True)
 
 
-# In[164]:
+# In[36]:
 
 
 len(us.column('state'))
 
 
-# In[172]:
+# In[37]:
 
 
 us.group('state').sort('count', descending=True)
 
 
-# In[165]:
+# In[38]:
 
 
 wash_pop = 7600000
@@ -429,19 +429,19 @@ p = wash_pop / us_pop
 np.random.binomial(n, p)
 
 
-# In[166]:
+# In[39]:
 
 
 n*p
 
 
-# In[167]:
+# In[40]:
 
 
 wash_count = 3966  # actual amount of sightings occuring in Washington state in the dataset
 
 
-# In[169]:
+# In[41]:
 
 
 # Binomial distirbution simulation
@@ -451,7 +451,7 @@ plots.scatter(n*p, -5, color='purple', s=100, zorder=2, label='Expected Value')
 plots.title('Binomial Distribution of Washington Counts')
 
 
-# In[170]:
+# In[42]:
 
 
 # Comparing above distribution to observed value

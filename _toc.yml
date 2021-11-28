@@ -6,7 +6,6 @@
   sections:
     - file: LinReg_PCA.ipynb
     - file: Linear_Regression.ipynb
-    - file: UFOProject.ipynb
     - file: data_cleaning.ipynb
     - file: ab_testing.ipynb
     - file: fuzzy_matching.ipynb

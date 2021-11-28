@@ -1,2 +1,2 @@
 ## About Me
-I’m a third year undergraduate student at the University of Chicago studying Quantitative Biology and Data Science.
+I’m a fourth year undergraduate student at the University of Chicago majoring in Biology and minoring in Data Science.
